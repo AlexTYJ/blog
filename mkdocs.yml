@@ -1,0 +1,292 @@
+site_name: Jerry's Blog
+site_url: http://blog.wxxcl.tech/
+repo_name: wxxcl0825/Blog
+repo_url: https://github.com/wxxcl0825/Blog
+site_description: Jerry's Blog
+copyright: Copyright &copy; 2024 <a href="https://github.com/wxxcl0825"  target="_blank" rel="noopener">wxxcl0825</a>
+
+theme:
+      name: material
+      language: zh
+      logo: favicon.png
+      favicon: favicon.png
+      features:
+            - content.code.annotate
+            - navigation.tracking
+            - navigation.tabs
+            - navigation.path
+            - navigation.indexes
+            - navigation.top
+            - navigation.footer
+            - content.code.copy
+      font: false
+      palette:
+            - media: "(prefers-color-scheme: light)"
+              scheme: default
+              primary: blue grey
+              accent: blue grey
+              toggle:
+                    icon: material/lightbulb
+                    name: Switch to dark mode
+            - media: "(prefers-color-scheme: dark)"
+              scheme: slate
+              primary: black
+              accent: black
+              toggle:
+                    icon: material/lightbulb-outline
+                    name: Switch to light mode
+
+markdown_extensions:
+      - toc:
+              permalink: true
+              toc_depth: 5
+      - def_list
+      - attr_list
+      - md_in_html
+      - sane_lists
+      - admonition
+      - pymdownx.keys
+      - pymdownx.mark
+      - pymdownx.tilde
+      - pymdownx.critic
+      - pymdownx.details
+      - pymdownx.snippets
+      - pymdownx.magiclink
+      - pymdownx.superfences
+      - pymdownx.inlinehilite
+      - pymdownx.smartsymbols
+      - pymdownx.emoji:
+              emoji_index: !!python/name:material.extensions.emoji.twemoji
+              emoji_generator: !!python/name:material.extensions.emoji.to_svg
+      - pymdownx.tabbed:
+              alternate_style: true
+      - pymdownx.tasklist:
+              custom_checkbox: true
+      - pymdownx.highlight:
+              anchor_linenums: true
+      - pymdownx.arithmatex:
+              generic: true
+      - pymdownx.superfences:
+              custom_fences:
+                    - name: mermaid
+                      class: mermaid
+                      format: !!python/name:pymdownx.superfences.fence_code_format
+
+extra_css:
+      - https://gcore.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.css
+      - https://gcore.jsdelivr.net/npm/lxgw-wenkai-screen-webfont@1.1.0/style.css
+      - https://gcore.jsdelivr.net/npm/lxgw-wenkai-webfont@1.1.0/style.css
+      - css/card.css
+
+extra_javascript:
+      - https://gcore.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.js
+      - https://polyfill.io/v3/polyfill.min.js?features=es6
+      - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js
+      - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+
+extra:
+      social:
+            - icon: fontawesome/brands/github
+              link: https://github.com/wxxcl0825
+              name: My Github Page
+            - icon: fontawesome/solid/rss
+              link: https://blog.csdn.net/qq_37638320
+              name: My CSDN Blog
+
+plugins:
+      - search
+      # - git-revision-date-localized:
+      #         type: datetime
+      #         timezone: Asia/Shanghai
+      #         locale: zh
+      #         enable_creation_date: true
+      # - git-committers:
+      #         repository: wxxcl0825/Blog
+      #         branch: master
+      # - git-authors
+
+nav:
+      - Home:
+              - index.md
+      - Course:
+              - course/index.md
+              - 数学分析 甲 (H):
+                      - course/calculus/index.md
+              - 人工智能引论:
+                      - 知识表达与推理:
+                              - 命题逻辑: course/aid/知识表达与推理/命题逻辑.md
+                              - 谓词逻辑: course/aid/知识表达与推理/谓词逻辑.md
+                              - 知识图谱推理: course/aid/知识表达与推理/知识图谱推理.md
+                              - 概率图推理: course/aid/知识表达与推理/概率图推理.md
+                              - 因果推理: course/aid/知识表达与推理/因果推理.md
+                      - 搜索探寻与问题求解:
+                              - 搜索基本概念: course/aid/搜索探寻与问题求解/搜索基本概念.md
+                              - 贪婪最佳优先搜索: course/aid/搜索探寻与问题求解/贪婪最佳优先搜索.md
+                              - A-star搜索: course/aid/搜索探寻与问题求解/A-star搜索.md
+                              - Minimax搜索: course/aid/搜索探寻与问题求解/Minimax搜索.md
+                              - alpha-beta搜索: course/aid/搜索探寻与问题求解/alpha-beta搜索.md
+                              - 蒙特卡洛树搜索: course/aid/搜索探寻与问题求解/蒙特卡洛树搜索.md
+                      - 机器学习:
+                              - 基本概念: course/aid/机器学习/基本概念.md
+                              - 回归分析: course/aid/机器学习/回归分析.md
+                              - 决策树: course/aid/机器学习/决策树.md
+                              - LDA: course/aid/机器学习/LDA.md
+                              - PCA: course/aid/机器学习/PCA.md
+                              - 特征人脸法: course/aid/机器学习/特征人脸法.md
+                              - k均值聚类: course/aid/机器学习/k均值聚类.md
+                              - 遗传算法: course/aid/机器学习/遗传算法.md
+                      - 神经网络与深度学习:
+                              - 概述: course/aid/神经网络与深度学习/概述.md
+                              - 神经网络参数优化: course/aid/神经网络与深度学习/神经网络参数优化.md
+                              - 神经网络正则化: course/aid/神经网络与深度学习/神经网络正则化.md
+                              - 卷积神经网络: course/aid/神经网络与深度学习/卷积神经网络.md
+                              - 循环神经网络: course/aid/神经网络与深度学习/循环神经网络.md
+                              - 注意力机制: course/aid/神经网络与深度学习/注意力机制.md
+                      - 强化学习:
+                              - 基本概念: course/aid/强化学习/基本概念.md
+                              - 马尔可夫决策过程: course/aid/强化学习/马尔可夫决策过程.md
+                              - 强化学习问题定义: course/aid/强化学习/强化学习问题定义.md
+                              - 强化学习方法: course/aid/强化学习/强化学习方法.md
+                      - 人工智能博弈:
+                              - 基本概念: course/aid/人工智能博弈/基本概念.md
+                              - 纳什均衡: course/aid/人工智能博弈/纳什均衡.md
+                              - 人工智能与博弈论: course/aid/人工智能博弈/人工智能与博弈论.md
+                      - 人工智能伦理与安全:
+                              - 人工智能伦理: course/aid/人工智能伦理与安全/人工智能伦理.md
+                              - 人工智能可解释性: course/aid/人工智能伦理与安全/人工智能可解释性.md
+                              - 人工智能模型安全: course/aid/人工智能伦理与安全/人工智能模型安全.md
+              - 图像信息处理:
+                      - Basic concept and programming introduction:
+                              - Basic principle of imaging: course/dip/Basic concept and programming introduction/Basic principle of imaging.md
+                              - Color space: course/dip/Basic concept and programming introduction/Color space.md
+                              - Image format: course/dip/Basic concept and programming introduction/Image format.md
+                              - JPEG(Joint Photographic Experts Group) format: course/dip/Basic concept and programming introduction/JPEG(Joint Photographic Experts Group) format.md
+                              - TIFF(Tagged Image File Format) format: course/dip/Basic concept and programming introduction/TIFF(Tagged Image File Format) format.md
+                      - Binary Image and Morphological Operation:
+                              - Binary Image: course/dip/Binary Image and Morphological Operation/Binary Image.md
+                              - Morphology: course/dip/Binary Image and Morphological Operation/Morphology.md
+                      - Basic operation:
+                              - Image grayscale transform: course/dip/Basic operation/Image grayscale transform.md
+                              - Geometric transform: course/dip/Basic operation/Geometric transform.md
+                              - Interpolation: course/dip/Basic operation/Interpolation.md
+                              - Morph: course/dip/Basic operation/Morph.md
+                              - Convolution: course/dip/Basic operation/Convolution.md
+                              - Sparse Norm Filtering: course/dip/Basic operation/Sparse Norm Filtering.md
+                              - Guided Image Filtering: course/dip/Basic operation/Guided Image Filtering.md
+                              - Fourier Transform: course/dip/Basic operation/Fourier Transform.md
+                              - Image feature: course/dip/Basic operation/Image feature.md
+              - 计算机逻辑设计基础:
+                      - Digital Systems and Information: course/cldf/Digital Systems and Information.md
+                      - Combinational Logic Circuits:
+                              - Gate Circuits and Boolean Equations: course/cldf/Combinational Logic Circuits/Gate Circuits and Boolean Equations.md
+                              - Circuit Optimization: course/cldf/Combinational Logic Circuits/Circuit Optimization.md
+                              - Additional Gates and Circuits: course/cldf/Combinational Logic Circuits/Additional Gates and Circuits.md
+                      - Combinational Logic Design:
+                              - Combinational Logic: course/cldf/Combinational Logic Design/Combinational Logic.md
+                              - Design Procedure: course/cldf/Combinational Logic Design/Design Procedure.md
+                              - Arithmetic Functions: course/cldf/Combinational Logic Design/Arithmetic Functions.md
+                      - Sequential Circuit:
+                              - Storage Elements and Sequential Circuit Analysis: course/cldf/Sequential Circuit/Storage Elements and Sequential Circuit Analysis.md
+                              - Sequential Circuit Design: course/cldf/Sequential Circuit/Sequential Circuit Design.md
+                      - Digital Hardware Implementation:
+                              - Programmable Implementation Technologies: course/cldf/Digital Hardware Implementation/Programmable Implementation Technologies.md
+                      - Registers and Register Transfers:
+                              - Registers, Microoperations and Implementations: course/cldf/Registers and Register Transfers/Registers, Microoperations and Implementations.md
+                              - Counters, register cells, buses, & serial operations: course/cldf/Registers and Register Transfers/Counters, register cells, buses, & serial operations.md
+              - 数据结构与算法基础:
+                      - 算法分析基础:
+                              - 算法: course/fds/算法分析基础/算法.md
+                              - 算法分析: course/fds/算法分析基础/算法分析.md
+                              - 算法比较: course/fds/算法分析基础/算法比较.md
+                      - 数据结构:
+                              - ADT: course/fds/数据结构/ADT.md
+                              - 列表: course/fds/数据结构/列表.md
+                              - 队列: course/fds/数据结构/队列.md
+                              - 栈: course/fds/数据结构/栈.md
+                              - 树: course/fds/数据结构/树.md
+                              - 二叉树: course/fds/数据结构/二叉树.md
+                              - 查找树: course/fds/数据结构/查找树.md
+                              - 优先队列(堆): course/fds/数据结构/优先队列（堆）.md
+                              - 并查集: course/fds/数据结构/并查集.md
+                              - 图: course/fds/数据结构/图.md
+                      - 排序: course/fds/排序.md
+                      - 哈希: course/fds/哈希.md
+      - Machine Learning:
+              - 动手学深度学习读书笔记:
+                      - machine learning/动手学深度学习读书笔记/index.md
+                      - 引言:
+                              - 基本概念: machine learning/动手学深度学习读书笔记/引言/基本概念.md
+                              - 核心组件: machine learning/动手学深度学习读书笔记/引言/核心组件.md
+                              - 学习问题分类: machine learning/动手学深度学习读书笔记/引言/学习问题分类.md
+                              - 深度学习: machine learning/动手学深度学习读书笔记/引言/深度学习.md
+                      - 线性神经网络:
+                              - 线性回归: machine learning/动手学深度学习读书笔记/线性神经网络/线性回归.md
+                              - 线性模型: machine learning/动手学深度学习读书笔记/线性神经网络/线性模型.md
+                              - 损失函数: machine learning/动手学深度学习读书笔记/线性神经网络/损失函数.md
+                              - 随机梯度下降: machine learning/动手学深度学习读书笔记/线性神经网络/随机梯度下降.md
+                              - softmax回归: machine learning/动手学深度学习读书笔记/线性神经网络/softmax回归.md
+                      - 预备知识:
+                              - 矩阵微分: machine learning/动手学深度学习读书笔记/预备知识/矩阵微分.md
+                              - 自动微分: machine learning/动手学深度学习读书笔记/预备知识/自动微分.md
+              - 比赛日志:
+                      - 雪浪算力开发者大赛日志: machine learning/AI contest/雪浪算力开发者大赛日志.md
+                      - 2023全球智能汽车AI挑战赛日志: machine learning/AI contest/2023全球智能汽车AI挑战赛日志.md
+              - PRML读书会第五期——概率图模型(Graphical Models): machine learning/PRML读书会第五期——概率图模型(Graphical Models).md
+      - Quantum Computing:
+              - 量子计算与量子信息读书笔记:
+                      - 简介与概述: quantum computing/量子计算与量子信息读书笔记/简介与概述.md
+              - 量子机器学习学习笔记:
+                      - 组合优化问题建模:
+                              - Max-Cut问题: quantum computing/量子机器学习学习笔记/组合优化问题建模/Max-Cut问题.md
+                              - Ising模型: quantum computing/量子机器学习学习笔记/组合优化问题建模/Ising模型.md
+                              - QUBO范式: quantum computing/量子机器学习学习笔记/组合优化问题建模/QUBO范式.md
+                              - 量子化: quantum computing/量子机器学习学习笔记/组合优化问题建模/量子化.md
+                              - Subset Sum问题: quantum computing/量子机器学习学习笔记/组合优化问题建模/Subset Sum问题.md
+                              - 离散二次模型: quantum computing/量子机器学习学习笔记/组合优化问题建模/离散二次模型.md
+                              - 0-1线性规划: quantum computing/量子机器学习学习笔记/组合优化问题建模/0-1线性规划.md
+                              - 整数线性规划: quantum computing/量子机器学习学习笔记/组合优化问题建模/整数线性规划.md
+                              - 背包问题: quantum computing/量子机器学习学习笔记/组合优化问题建模/背包问题.md
+                              - k-着色问题: quantum computing/量子机器学习学习笔记/组合优化问题建模/k-着色问题.md
+                              - 旅行商问题: quantum computing/量子机器学习学习笔记/组合优化问题建模/旅行商问题.md
+                      - 绝热量子计算:
+                              - 绝热量子计算: quantum computing/量子机器学习学习笔记/绝热量子计算/绝热量子计算.md
+                              - 量子退火: quantum computing/量子机器学习学习笔记/绝热量子计算/量子退火.md
+                              - 非纯量子求解器: quantum computing/量子机器学习学习笔记/绝热量子计算/非纯量子求解器.md
+                              - 拓扑结构与嵌入: quantum computing/量子机器学习学习笔记/绝热量子计算/拓扑结构与嵌入.md
+                              - 参数选择: quantum computing/量子机器学习学习笔记/绝热量子计算/参数选择.md
+              - 量子游走学习笔记:
+                      - 量子游走: quantum computing/量子游走学习笔记/量子游走.md
+              - 论文阅读笔记:
+                      - 基于量子计算的投资组合优化算法: reading/基于量子计算的投资组合优化算法.md
+                      - A Quantum Algorithm for Shapley Value Estimation: reading/A Quantum Algorithm for Shapley Value Estimation.md
+                      - Quantum random access memory via quantum walk: reading/Quantum random access memory via quantum walk.md
+      - Miscellaneous:
+              - miscellaneous/index.md
+              - verilog:
+                      - miscellaneous/verilog/index.md
+                      - 模块基本概念: miscellaneous/verilog/模块基本概念.md
+                      - 模块的结构: miscellaneous/verilog/模块的结构.md
+                      - 数据类型&常量变量: miscellaneous/verilog/数据类型&常量变量.md
+                      - 运算符: miscellaneous/verilog/运算符.md
+                      - 赋值语句: miscellaneous/verilog/赋值语句.md
+                      - 控制语句: miscellaneous/verilog/控制语句.md
+                      - 块语句: miscellaneous/verilog/块语句.md
+                      - 结构语句: miscellaneous/verilog/结构语句.md
+              - android:
+                      - 第一行代码读书笔记——Kotlin: miscellaneous/android/第一行代码读书笔记——Kotlin.md
+                      - Jetpack Compose学习笔记——UI组件: miscellaneous/android/Jetpack Compose学习笔记——UI组件.md
+              - algorithm:
+                      - 算法竞赛进阶指南学习笔记:
+                              - miscellaneous/algorithm/算法竞赛进阶指南学习笔记/index.md
+                              - 位运算: miscellaneous/algorithm/算法竞赛进阶指南学习笔记/位运算.md
+                              - 递推与递归: miscellaneous/algorithm/算法竞赛进阶指南学习笔记/递推与递归.md
+                              - 前缀和与差分: miscellaneous/algorithm/算法竞赛进阶指南学习笔记/前缀和与差分.md
+                              - 二分: miscellaneous/algorithm/算法竞赛进阶指南学习笔记/二分.md
+                              - 排序: miscellaneous/algorithm/算法竞赛进阶指南学习笔记/排序.md
+                              - 倍增: miscellaneous/algorithm/算法竞赛进阶指南学习笔记/倍增.md
+                              - 贪心: miscellaneous/algorithm/算法竞赛进阶指南学习笔记/贪心.md
+                              - 总结与练习1: miscellaneous/algorithm/算法竞赛进阶指南学习笔记/总结与练习1.md
+                              - 栈: miscellaneous/algorithm/算法竞赛进阶指南学习笔记/栈.md
+                              - 链表与邻接表: miscellaneous/algorithm/算法竞赛进阶指南学习笔记/链表与邻接表.md
+                              - C++ STL: miscellaneous/algorithm/算法竞赛进阶指南学习笔记/C++ STL.md
+                              - 随机数据生成与对拍: miscellaneous/algorithm/算法竞赛进阶指南学习笔记/随机数据生成与对拍.md

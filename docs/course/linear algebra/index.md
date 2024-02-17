@@ -1,13 +1,32 @@
-# 线性代数 I (B)
+# 线性代数I/II(B)
+中国科学院大学 “线性代数(B)” 课程采用的教材为 **《代数学引论》（柯斯特利金）**与 **《基础代数》（席南华）**。“线性代数I”为大一上学期公共必修课，“线性代数II”为大一下学期公共必修课。
 
-!!! Abstract
-    中国科学院大学 “线性代数 I(B)” 课程手写笔记
+本课程虽然正式名称为“线性代数”，但其中包括了少量抽象代数的入门知识（如群环域），读者可以结合自身需求阅读。
 
-<div class="card file-block" markdown="1">
-<div class="file-icon"><img src="/assets/images/pdf.svg" style="height: 3em;"></div>
-<div class="file-body">
-<div class="file-title">线性代数 I(B)</div>
-<div class="file-meta">107.3 MB / 325 P / 2023-1</div>
-</div>
-<a class="down-button" target="_blank" href="/assets/files/线性代数I 笔记.pdf" markdown="1">:fontawesome-solid-download: 下载</a>
-</div>
+## 线性代数I(B)
+- **每周总结**
+    
+    文件太大了，只能通过网盘下载了qwq
+    <div class="card file-block" markdown="1">
+    <div class="file-icon"><img src="/assets/images/pdf.svg" style="height: 3em;"></div>
+    <div class="file-body">
+    <div class="file-title">线性代数每周总结 I(B)</div>
+    <div class="file-meta">107.3 MB / 80 P / 2023-1</div>
+    </div>
+    <a class="down-button" target="_blank" href="/assets/files/线性代数I 笔记.pdf"   markdown="1">:fontawesome-solid-download: 下载</a>
+    </div>
+
+- **期中总结**
+
+    这个期中总结比较随意，不建议认真看……
+
+    <div class="card file-block" markdown="1">
+    <div class="file-icon"><img src="/assets/images/pdf.svg" style="height: 3em;"></div>
+    <div class="file-body">
+    <div class="file-title">线性代数I(B)期中总结</div>
+    <div class="file-meta">11.5 MB / 13 P / 2023-10</div>
+    </div>
+    <a class="down-button" target="_blank" href="/assets/files/线性代数I 期中总结.pdf"   markdown="1">:fontawesome-solid-download: 下载</a>
+    </div>
+
+## 线性代数II(B)##

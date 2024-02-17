@@ -1,9 +1,9 @@
-site_name: Jerry's Blog
+site_name: AlexTYJ's Blog
 site_url: http://blog.wxxcl.tech/
-repo_name: wxxcl0825/Blog
-repo_url: https://github.com/wxxcl0825/Blog
-site_description: Jerry's Blog
-copyright: Copyright &copy; 2024 <a href="https://github.com/wxxcl0825"  target="_blank" rel="noopener">wxxcl0825</a>
+repo_name: alextyj/Blog
+repo_url: https://github.com/AlexTYJ/Blog
+site_description: AlexTYJ's Blog
+copyright: Copyright &copy; 2024 <a href="https://github.com/AlexTYJ"  target="_blank" rel="noopener">AlexTYJ</a>
 
 theme:
       name: material

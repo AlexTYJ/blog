@@ -113,10 +113,11 @@ nav:
   - Home: index.md
   - 学习笔记: 
     - study/index.md
-    - 数学: math/1.md 
+    - 数学: study/math/1.md 
   - 课程笔记:
      - course/index.md
      - 线性代数: course/linear algebra/index.md
   - 技术博客: technical/index.md
-
+  - 随笔: 
+    - essay/index.md
 

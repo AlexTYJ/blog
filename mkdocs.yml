@@ -8,8 +8,8 @@ copyright: Copyright &copy; 2024 <a href="https://github.com/AlexTYJ"  target="_
 theme:
       name: material
       language: zh
-      logo: favicon.png
-      favicon: favicon.png
+      #logo: favicon.png
+      #favicon: favicon.png
       features:
             - content.code.annotate
             - navigation.tracking
@@ -18,23 +18,27 @@ theme:
             - navigation.indexes
             - navigation.top
             - navigation.footer
+            - navigation.expand
             - content.code.copy
-      font: false
+      font: 
+        text: LXGW WenKai Screen
+        code: JetBrains Mono
       palette:
             - media: "(prefers-color-scheme: light)"
-              scheme: default
-              primary: blue grey
-              accent: blue grey
+              scheme: default #default代表浅色模式
+              primary: light blue #主颜色
+              accent: deep purple #强调色
               toggle:
-                    icon: material/lightbulb
+                    icon: material/weather-sunny
                     name: Switch to dark mode
             - media: "(prefers-color-scheme: dark)"
               scheme: slate
               primary: black
-              accent: black
+              accent: yellow
               toggle:
-                    icon: material/lightbulb-outline
+                    icon: material/weather-night
                     name: Switch to light mode
+            
 
 markdown_extensions:
       - toc:

@@ -24,9 +24,31 @@
     <div class="file-icon"><img src="/assets/images/pdf.svg" style="height: 3em;"></div>
     <div class="file-body">
     <div class="file-title">线性代数I(B)期中总结</div>
-    <div class="file-meta">11.5 MB / 13 P / 2023-10</div>
+    <div class="file-meta">11.5 MB / 13 P / 2022-10</div>
     </div>
     <a class="down-button" target="_blank" href="/assets/files/线性代数I 期中总结.pdf"   markdown="1">:fontawesome-solid-download: 下载</a>
     </div>
 
 ## 线性代数II(B)##
+
+- **每周总结**
+
+    这部分在B站有一些配套视频，可以结合观看
+    <div class="card file-block" markdown="1">
+    <div class="file-icon"><img src="/assets/images/bilibili.jpg" style="height: 3em;"></div>
+    <div class="file-body">
+    <div class="file-title">线性代数I(B)期中总结</div>
+    </div>
+    <a class="down-button" target="_blank" href="https://space.bilibili.com/400146621/channel/seriesdetail?sid=3967837&ctype=0"   markdown="1">跳转</a>
+    </div>
+    
+    配套的笔记：
+
+    <div class="card file-block" markdown="1">
+    <div class="file-icon"><img src="/assets/images/pdf.svg" style="height: 3em;"></div>
+    <div class="file-body">
+    <div class="file-title">线性代数II(B)每周总结</div>
+    <div class="file-meta">55.6 MB / 48 P / 2023-10</div>
+    </div>
+    <a class="down-button" target="_blank" href="/assets/files/线代II每周总结.pdf.pdf"   markdown="1">:fontawesome-solid-download: 下载</a>
+    </div>

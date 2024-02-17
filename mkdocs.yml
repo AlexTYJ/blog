@@ -87,10 +87,10 @@ extra_javascript:
 extra:
       social:
             - icon: fontawesome/brands/github
-              link: https://github.com/wxxcl0825
+              link: https://github.com/AlexTYJ
               name: My Github Page
             - icon: fontawesome/solid/rss
-              link: https://blog.csdn.net/qq_37638320
+              link: https://blog.csdn.net/qq_40941140
               name: My CSDN Blog
 
 plugins:
@@ -105,68 +105,3 @@ plugins:
       #         branch: master
       # - git-authors
 
-nav:
-      - Home:
-              - index.md
-      - Course:
-              - course/index.md
-              - 数学分析 甲 (H):
-                      - course/calculus/index.md
-      - Quantum Computing:
-              - 量子计算与量子信息读书笔记:
-                      - 简介与概述: quantum computing/量子计算与量子信息读书笔记/简介与概述.md
-              - 量子机器学习学习笔记:
-                      - 组合优化问题建模:
-                              - Max-Cut问题: quantum computing/量子机器学习学习笔记/组合优化问题建模/Max-Cut问题.md
-                              - Ising模型: quantum computing/量子机器学习学习笔记/组合优化问题建模/Ising模型.md
-                              - QUBO范式: quantum computing/量子机器学习学习笔记/组合优化问题建模/QUBO范式.md
-                              - 量子化: quantum computing/量子机器学习学习笔记/组合优化问题建模/量子化.md
-                              - Subset Sum问题: quantum computing/量子机器学习学习笔记/组合优化问题建模/Subset Sum问题.md
-                              - 离散二次模型: quantum computing/量子机器学习学习笔记/组合优化问题建模/离散二次模型.md
-                              - 0-1线性规划: quantum computing/量子机器学习学习笔记/组合优化问题建模/0-1线性规划.md
-                              - 整数线性规划: quantum computing/量子机器学习学习笔记/组合优化问题建模/整数线性规划.md
-                              - 背包问题: quantum computing/量子机器学习学习笔记/组合优化问题建模/背包问题.md
-                              - k-着色问题: quantum computing/量子机器学习学习笔记/组合优化问题建模/k-着色问题.md
-                              - 旅行商问题: quantum computing/量子机器学习学习笔记/组合优化问题建模/旅行商问题.md
-                      - 绝热量子计算:
-                              - 绝热量子计算: quantum computing/量子机器学习学习笔记/绝热量子计算/绝热量子计算.md
-                              - 量子退火: quantum computing/量子机器学习学习笔记/绝热量子计算/量子退火.md
-                              - 非纯量子求解器: quantum computing/量子机器学习学习笔记/绝热量子计算/非纯量子求解器.md
-                              - 拓扑结构与嵌入: quantum computing/量子机器学习学习笔记/绝热量子计算/拓扑结构与嵌入.md
-                              - 参数选择: quantum computing/量子机器学习学习笔记/绝热量子计算/参数选择.md
-              - 量子游走学习笔记:
-                      - 量子游走: quantum computing/量子游走学习笔记/量子游走.md
-              - 论文阅读笔记:
-                      - 基于量子计算的投资组合优化算法: reading/基于量子计算的投资组合优化算法.md
-                      - A Quantum Algorithm for Shapley Value Estimation: reading/A Quantum Algorithm for Shapley Value Estimation.md
-                      - Quantum random access memory via quantum walk: reading/Quantum random access memory via quantum walk.md
-      - Miscellaneous:
-              - miscellaneous/index.md
-              - verilog:
-                      - miscellaneous/verilog/index.md
-                      - 模块基本概念: miscellaneous/verilog/模块基本概念.md
-                      - 模块的结构: miscellaneous/verilog/模块的结构.md
-                      - 数据类型&常量变量: miscellaneous/verilog/数据类型&常量变量.md
-                      - 运算符: miscellaneous/verilog/运算符.md
-                      - 赋值语句: miscellaneous/verilog/赋值语句.md
-                      - 控制语句: miscellaneous/verilog/控制语句.md
-                      - 块语句: miscellaneous/verilog/块语句.md
-                      - 结构语句: miscellaneous/verilog/结构语句.md
-              - android:
-                      - 第一行代码读书笔记——Kotlin: miscellaneous/android/第一行代码读书笔记——Kotlin.md
-                      - Jetpack Compose学习笔记——UI组件: miscellaneous/android/Jetpack Compose学习笔记——UI组件.md
-              - algorithm:
-                      - 算法竞赛进阶指南学习笔记:
-                              - miscellaneous/algorithm/算法竞赛进阶指南学习笔记/index.md
-                              - 位运算: miscellaneous/algorithm/算法竞赛进阶指南学习笔记/位运算.md
-                              - 递推与递归: miscellaneous/algorithm/算法竞赛进阶指南学习笔记/递推与递归.md
-                              - 前缀和与差分: miscellaneous/algorithm/算法竞赛进阶指南学习笔记/前缀和与差分.md
-                              - 二分: miscellaneous/algorithm/算法竞赛进阶指南学习笔记/二分.md
-                              - 排序: miscellaneous/algorithm/算法竞赛进阶指南学习笔记/排序.md
-                              - 倍增: miscellaneous/algorithm/算法竞赛进阶指南学习笔记/倍增.md
-                              - 贪心: miscellaneous/algorithm/算法竞赛进阶指南学习笔记/贪心.md
-                              - 总结与练习1: miscellaneous/algorithm/算法竞赛进阶指南学习笔记/总结与练习1.md
-                              - 栈: miscellaneous/algorithm/算法竞赛进阶指南学习笔记/栈.md
-                              - 链表与邻接表: miscellaneous/algorithm/算法竞赛进阶指南学习笔记/链表与邻接表.md
-                              - C++ STL: miscellaneous/algorithm/算法竞赛进阶指南学习笔记/C++ STL.md
-                              - 随机数据生成与对拍: miscellaneous/algorithm/算法竞赛进阶指南学习笔记/随机数据生成与对拍.md

@@ -44,6 +44,7 @@ markdown_extensions:
       - toc:
               permalink: true
               toc_depth: 5
+      - tables
       - def_list
       - attr_list
       - md_in_html
@@ -113,7 +114,7 @@ nav:
   - Home: index.md
   - 学习笔记: 
     - study/index.md
-    - 数学: study/math/1.md 
+    - study/two's complement representation.md
   - 课程笔记:
      - course/index.md
      - 线性代数: course/linear algebra/index.md

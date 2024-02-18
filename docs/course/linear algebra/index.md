@@ -1,5 +1,5 @@
 # 线性代数(B)
-中国科学院大学 “线性代数(B)” 课程采用的教材为 **《代数学引论》（柯斯特利金）**与 **《基础代数》（席南华）**。“线性代数I”为大一上学期公共必修课，“线性代数II”为大一下学期公共必修课。
+中国科学院大学 “线性代数(B)” 课程采用的教材为 **《代数学引论》（柯斯特利金）**与 **《基础代数》（席南华）**。“线性代数I”为大一上学期公共必修课，“线性代数II”为大一下学期公共必修课。括号(B)代表难度为B级，适用于非数学系类学生。
 
 本课程虽然正式名称为“线性代数”，但其中包括了少量抽象代数的入门知识（如群环域），读者可以结合自身需求阅读。
 
@@ -10,7 +10,7 @@
     <div class="card file-block" markdown="1">
     <div class="file-icon"><img src="/assets/images/pdf.svg" style="height: 2em;"></div>
     <div class="file-body">
-    <div class="file-title">线性代数每周总结 I(B)</div>
+    <div class="file-title">线性代数I(B)每周总结</div>
     <div class="file-meta">107.3 MB / 80 P / 2023-1</div>
     </div>
     <a class="down-button" target="_blank" href="/assets/files/线性代数I 笔记.pdf"   markdown="1">:fontawesome-solid-download: 下载</a>

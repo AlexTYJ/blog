@@ -4,6 +4,8 @@
 
 这里的笔记大多是**无系统性的，无严谨性的，无可读性的(non-systematic, non-rigorous, non-readable)**，欢迎读者批评指正。
 
+早期的笔记均使用goodnotes5手写，提供pdf下载。但是由于某些技术原因只能提供网盘下载qwq。今后的笔记会尽量采用markdown版本！
+
 课程名称均采用中国科学院大学官方名称。
 
 课程总览: 

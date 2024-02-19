@@ -1,0 +1,14 @@
+- "placeholder1":
+  - "time1":
+    - "type": text
+    - "type": text
+- "placeholder":
+  - "time2":
+    - "type":
+        text: text
+        href: /link/to/page/
+    - "type":
+        text: text
+        href: /link/to/page/
+  - "time3":
+    - "type": text

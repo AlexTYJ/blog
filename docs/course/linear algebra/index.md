@@ -1,20 +1,28 @@
 # 线性代数(B)
-中国科学院大学 “线性代数(B)” 课程采用的教材为 **《代数学引论》（柯斯特利金）**与 **《基础代数》（席南华）**。“线性代数I”为大一上学期公共必修课，“线性代数II”为大一下学期公共必修课。括号(B)代表难度为B级，适用于非数学系类学生。
+&emsp;&emsp;中国科学院大学 “线性代数(B)” 课程采用的教材为 **《代数学引论》（柯斯特利金）**与 **《基础代数》（席南华）**。“线性代数I”为大一上学期公共必修课，“线性代数II”为大一下学期公共必修课。括号(B)代表难度为B级，适用于非数学系类学生。
 
-本课程虽然正式名称为“线性代数”，但其中包括了少量抽象代数的入门知识（如群环域），读者可以结合自身需求阅读。
+&emsp;&emsp;本课程虽然正式名称为“线性代数”，但其中包括了少量抽象代数的入门知识（如群环域），读者可以结合自身需求阅读。
+
+&emsp;&emsp;由于pdf太大了，cloudflare不允许更新这么大的文件（~~毕竟白嫖的~~），所以本页面所有pdf提供网盘打包下载。
+
+<div class="card file-block" markdown="1">
+<div class="file-icon"><img src="/assets/images/pdf.svg" style="height: 2em;"></div>
+<div class="file-body">
+<div class="file-title">线性代数所有笔记</div>
+<div class="file-meta">58 MB / 48 P / 2023-10</div>
+</div>
+<a class="down-button" target="_blank" href="/assets/files/线代II每周总结.pdf"   markdown="1">:fontawesome-solid-download: 下载</a>
+ </div>
 
 ## 线性代数I(B)
 - **每周总结**
     
-    文件太大了，只能通过网盘下载了qwq
     <div class="card file-block" markdown="1">
     <div class="file-icon"><img src="/assets/images/pdf.svg" style="height: 2em;"></div>
     <div class="file-body">
     <div class="file-title">线性代数I(B)每周总结</div>
     <div class="file-meta">107.3 MB / 80 P / 2023-1</div>
-    </div>
-    <a class="down-button" target="_blank" href="/assets/files/线性代数I 笔记.pdf"   markdown="1">:fontawesome-solid-download: 下载</a>
-    </div>
+    
 
 - **期中总结**
 
@@ -24,10 +32,7 @@
     <div class="file-icon"><img src="/assets/images/pdf.svg" style="height: 2em;"></div>
     <div class="file-body">
     <div class="file-title">线性代数I(B)期中总结</div>
-    <div class="file-meta">11.5 MB / 13 P / 2022-10</div>
-    </div>
-    <a class="down-button" target="_blank" href="/assets/files/线性代数I 期中总结.pdf"   markdown="1">:fontawesome-solid-download: 下载</a>
-    </div>
+    <div class="file-meta">11.5 MB / 13 P / 2022-10</div>  
 
 - **B站视频**
 
@@ -108,7 +113,23 @@
     <div class="file-icon"><img src="/assets/images/pdf.svg" style="height: 2em;"></div>
     <div class="file-body">
     <div class="file-title">线性代数II(B)每周总结</div>
-    <div class="file-meta">58 MB / 48 P / 2023-10</div>
-    </div>
-    <a class="down-button" target="_blank" href="/assets/files/线代II每周总结.pdf"   markdown="1">:fontawesome-solid-download: 下载</a>
-    </div>
+    <div class="file-meta">58 MB / 48 P / 2023-7</div>
+</div>
+
+- **期中总结**
+
+    <div class="card file-block" markdown="1">
+    <div class="file-icon"><img src="/assets/images/pdf.svg" style="height: 2em;"></div>
+    <div class="file-body">
+    <div class="file-title">线性代数II(B)期中总结</div>
+    <div class="file-meta">29.27 MB / 13 P / 2023-4</div>
+</div>
+
+- **期末总结**
+
+    <div class="card file-block" markdown="1">
+    <div class="file-icon"><img src="/assets/images/pdf.svg" style="height: 2em;">  </div>
+    <div class="file-body">
+    <div class="file-title">线性代数II(B)期末总结</div>
+    <div class="file-meta">21.57 MB / 18 P / 2023-7</div>
+</div>

@@ -22,7 +22,7 @@
     <div class="file-body">
     <div class="file-title">线性代数I(B)每周总结</div>
     <div class="file-meta">107.3 MB / 80 P / 2023-1</div>
-    
+    </div>
 
 - **期中总结**
 
@@ -33,7 +33,7 @@
     <div class="file-body">
     <div class="file-title">线性代数I(B)期中总结</div>
     <div class="file-meta">11.5 MB / 13 P / 2022-10</div>  
-
+    </div>
 - **B站视频**
 
     B站有一些零碎的视频，是22年末 ~~因为某些众所周知的原因~~ 封在酒店里闲着无聊录的，质量还行，链接如下：

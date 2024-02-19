@@ -13,3 +13,37 @@
 </div>
 <a class="down-button" target="_blank" href="/assets/files/线代II每周总结.pdf"   markdown="1">:fontawesome-solid-download: 下载</a>
  </div>
+
+- **每周总结**
+
+    <div class="card file-block" markdown="1">
+    <div class="file-icon"><img src="/assets/images/pdf.svg" style="height: 2em;"></div>
+    <div class="file-body">
+    <div class="file-title">微积分I(B)每周总结</div>
+    <div class="file-meta">62.10 MB / 41 P / 2022-1</div>
+    </div>
+    </div>
+
+    <div class="card file-block" markdown="1">
+    <div class="file-icon"><img src="/assets/images/pdf.svg" style="height: 2em;"></div>
+    <div class="file-body">
+    <div class="file-title">微积分II(B)每周总结</div>
+    <div class="file-meta">37.63 MB / 33 P / 2022-7</div>
+    </div>
+    </div>
+
+- **相关视频**
+
+&emsp;&emsp;我在B站也有一些相关视频，链接如下：
+
+<div class="card file-block" markdown="1">
+<div class="file-icon"><img src="/assets/images/bilibili.jpg" style="height: 2em;"></div>
+<div class="file-body">
+<div class="file-title">微积分相关视频</div>
+</div>
+<a class="down-button" target="_blank" href="https://space.bilibili.com/400146621/channel/seriesdetail?sid=3972230&ctype=0" markdown="1">跳转</a>
+</div>
+
+&emsp;&emsp;微积分就先放这么多吧，感觉其他的笔记没啥价值
+
+

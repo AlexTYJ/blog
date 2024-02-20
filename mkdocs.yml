@@ -124,8 +124,8 @@ nav:
      - 物理课程: 
        - course/physics/index.md
        - 力学: course/physics/mechanics/index.md
-     - 计算机科学导论: course\计算机科学导论\index.md
-     - 概率论与数理统计: course\概率论与数理统计\index.md
+     - 计算机科学导论: course\jkd\index.md
+     - 概率论与数理统计: course\pas\index.md
   - 技术博客: technical/index.md
   - 随笔: 
     - essay/index.md

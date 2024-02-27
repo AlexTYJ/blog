@@ -1,134 +1,133 @@
 site_name: AlexTYJ's Blog
-#site_url: 
+#site_url:
 repo_name: alextyj/Blog
 repo_url: https://github.com/AlexTYJ/Blog
 site_description: AlexTYJ's Blog
 copyright: Copyright &copy; 2024 <a href="https://github.com/AlexTYJ"  target="_blank" rel="noopener">AlexTYJ</a>
 
 theme:
-      name: material
-      language: zh
-      #logo: favicon.png
-      #favicon: favicon.png
-      features:
-            - content.code.annotate
-            - navigation.tracking
-            - navigation.tabs
-            - navigation.path
-            - navigation.indexes
-            - navigation.top
-            - navigation.footer
-            - navigation.expand
-            - content.code.copy
-      font: 
-        text: LXGW WenKai Screen
-        code: JetBrains Mono
-      palette:
-            - media: "(prefers-color-scheme: light)"
-              scheme: default #default代表浅色模式
-              primary: light blue #主颜色
-              accent: deep purple #强调色
-              toggle:
-                    icon: material/weather-sunny
-                    name: Switch to dark mode
-            - media: "(prefers-color-scheme: dark)"
-              scheme: slate
-              primary: black
-              accent: yellow
-              toggle:
-                    icon: material/weather-night
-                    name: Switch to light mode
-            
+  name: material
+  language: zh
+  #logo: favicon.png
+  #favicon: favicon.png
+  features:
+    - content.code.annotate
+    - navigation.tracking
+    - navigation.tabs
+    - navigation.path
+    - navigation.indexes
+    - navigation.top
+    - navigation.footer
+    - navigation.expand
+    - content.code.copy
+  font:
+    text: LXGW WenKai Screen
+    code: JetBrains Mono
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default #default代表浅色模式
+      primary: light blue #主颜色
+      accent: deep purple #强调色
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: black
+      accent: yellow
+      toggle:
+        icon: material/weather-night
+        name: Switch to light mode
 
 markdown_extensions:
-      - toc:
-              permalink: true
-              toc_depth: 5
-      - tables
-      - def_list
-      - attr_list
-      - md_in_html
-      - sane_lists
-      - admonition
-      - pymdownx.keys
-      - pymdownx.mark
-      - pymdownx.tilde
-      - pymdownx.critic
-      - pymdownx.details
-      - pymdownx.snippets
-      - pymdownx.magiclink
-      - pymdownx.superfences
-      - pymdownx.inlinehilite
-      - pymdownx.smartsymbols
-      - pymdownx.emoji:
-              emoji_index: !!python/name:material.extensions.emoji.twemoji
-              emoji_generator: !!python/name:material.extensions.emoji.to_svg
-      - pymdownx.tabbed:
-              alternate_style: true
-      - pymdownx.tasklist:
-              custom_checkbox: true
-      - pymdownx.highlight:
-              anchor_linenums: true
-      - pymdownx.arithmatex:
-              generic: true
-      - pymdownx.superfences:
-              custom_fences:
-                    - name: mermaid
-                      class: mermaid
-                      format: !!python/name:pymdownx.superfences.fence_code_format
+  - toc:
+      permalink: true
+      toc_depth: 5
+  - tables
+  - def_list
+  - attr_list
+  - md_in_html
+  - sane_lists
+  - admonition
+  - pymdownx.keys
+  - pymdownx.mark
+  - pymdownx.tilde
+  - pymdownx.critic
+  - pymdownx.details
+  - pymdownx.snippets
+  - pymdownx.magiclink
+  - pymdownx.superfences
+  - pymdownx.inlinehilite
+  - pymdownx.smartsymbols
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.arithmatex:
+      generic: true
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
 
 extra_css:
-      - https://gcore.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.css
-      - https://gcore.jsdelivr.net/npm/lxgw-wenkai-screen-webfont@1.1.0/style.css
-      - https://gcore.jsdelivr.net/npm/lxgw-wenkai-webfont@1.1.0/style.css
-      - css/card.css
+  - https://gcore.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.css
+  - https://gcore.jsdelivr.net/npm/lxgw-wenkai-screen-webfont@1.1.0/style.css
+  - https://gcore.jsdelivr.net/npm/lxgw-wenkai-webfont@1.1.0/style.css
+  - css/card.css
 
 extra_javascript:
-      - https://gcore.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.js
-      - https://polyfill.io/v3/polyfill.min.js?features=es6
-      - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js
-      - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+  - https://gcore.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.js
+  - https://polyfill.io/v3/polyfill.min.js?features=es6
+  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js
+  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
 
 extra:
-      social:
-            - icon: fontawesome/brands/github
-              link: https://github.com/AlexTYJ
-              name: My Github Page
-            - icon: fontawesome/solid/rss
-              link: https://blog.csdn.net/qq_40941140
-              name: My CSDN Blog
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/AlexTYJ
+      name: My Github Page
+    - icon: fontawesome/solid/rss
+      link: https://blog.csdn.net/qq_40941140
+      name: My CSDN Blog
 
 plugins:
-      - search
-     # - changelog:
-     #   file: changelog.yml
-      # - git-revision-date-localized:
-      #         type: datetime
-      #         timezone: Asia/Shanghai
-       #        locale: zh
-       #        enable_creation_date: true
-       #- git-committers:
-       #        repository: wxxcl0825/Blog
-       #        branch: master
-      # - git-authors
+  - search
+  # - changelog:
+  #   file: changelog.yml
+  # - git-revision-date-localized:
+  #         type: datetime
+  #         timezone: Asia/Shanghai
+  #        locale: zh
+  #        enable_creation_date: true
+  #- git-committers:
+  #        repository: wxxcl0825/Blog
+  #        branch: master
+  # - git-authors
 
 nav:
   - Home: index.md
-  - 学习笔记: 
-    - study/index.md
-    - study/two's complement representation.md
+  - 学习笔记:
+      - study/index.md
+      - study/two's complement representation.md
   - 课程笔记:
-     - course/index.md
-     - 线性代数: course/linear algebra/index.md
-     - 微积分: course/calculus/index.md
-     - 物理课程: 
-       - course/physics/index.md
-       - 力学: course/physics/mechanics/index.md
-     - 计算机科学导论: course/jkd/index.md
-     - 概率论与数理统计: course/pas/index.md
+      - course/index.md
+      - 线性代数: course/linear algebra/index.md
+      - 微积分: course/calculus/index.md
+      - 物理课程:
+          - course/physics/index.md
+          - 力学: course/physics/mechanics/index.md
+      - 计算机科学导论: course/jkd/index.md
+      - 概率论与数理统计: course/pas/index.md
+      - 信息论: course/Information Theory/index.md
   - 技术博客: technical/index.md
-  - 随笔: 
-    - essay/index.md
-    - 2023年8月4日随笔一则: essay/230804.md
-    - 小说：太阳照常升起: essay/太阳照常升起.md
-
+  - 随笔:
+      - essay/index.md
+      - 2023年8月4日随笔一则: essay/230804.md
+      - 小说：太阳照常升起: essay/太阳照常升起.md

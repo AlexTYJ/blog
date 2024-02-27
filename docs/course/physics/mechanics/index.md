@@ -1,7 +1,8 @@
 # 力学
+
 &emsp;&emsp;中国科学院大学“力学”课程采用教材为（）
 
-&emsp;&emsp;只有期末复习笔记，链接如下：
+&emsp;&emsp;只有期末复习笔记，链接如下：(现在还没放进去，以后有时间来补档)
 
 <div class="card file-block" markdown="1">
 <div class="file-icon"><img src="/assets/images/pdf.svg" style="height: 2em;"></div>
@@ -11,4 +12,3 @@
 </div>
 <a class="down-button" target="_blank" href="/assets/files/线代II每周总结.pdf"   markdown="1">:fontawesome-solid-download: 下载</a>
  </div>
-

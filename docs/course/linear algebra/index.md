@@ -3,7 +3,7 @@
 
 &emsp;&emsp;本课程虽然正式名称为“线性代数”，但其中包括了少量抽象代数的入门知识（如群环域），读者可以结合自身需求阅读。
 
-&emsp;&emsp;由于pdf太大了，cloudflare不允许更新这么大的文件（~~毕竟白嫖的~~），所以本页面所有pdf提供网盘打包下载。
+&emsp;&emsp;由于pdf太大了，cloudflare不允许更新这么大的文件（~~毕竟白嫖的~~），所以本页面所有pdf提供网盘打包下载。(现在还没放进去，以后有时间来补档)
 
 <div class="card file-block" markdown="1">
 <div class="file-icon"><img src="/assets/images/pdf.svg" style="height: 2em;"></div>

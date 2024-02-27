@@ -1,2 +1,3 @@
 # My Blog
-url: [blog.wxxcl.tech](https://blog.wxxcl.tech)
+
+url: [alextyjblog.pages.dev/](https://alextyjblog.pages.dev/)

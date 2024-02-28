@@ -127,7 +127,7 @@ nav:
       - 计算机科学导论: course/jkd/index.md
       - 概率论与数理统计: course/pas/index.md
       - 信息论: course/Information Theory/index.md
-      - 人工智能导论: course/Principles of Artificial Intelligence/index.md
+      - 人工智能原理: course/Principles of Artificial Intelligence/index.md
   - 技术博客: technical/index.md
   - 随笔:
       - essay/index.md

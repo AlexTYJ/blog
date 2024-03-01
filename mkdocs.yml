@@ -128,6 +128,8 @@ nav:
       - 概率论与数理统计: course/pas/index.md
       - 信息论: course/Information Theory/index.md
       - 人工智能原理: course/Principles of Artificial Intelligence/index.md
+      - 模式识别与机器学习: course/Pattern Recognition and Machine Learning/index.md
+      - 数据结构与算法: course/Data Structure and Algorithms/index.md
   - 技术博客: technical/index.md
   - 随笔:
       - essay/index.md

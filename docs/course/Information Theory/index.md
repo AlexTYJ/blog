@@ -57,3 +57,15 @@ I(X,Y)=H[x]-H[x|y]=H[y]-H[y|x]=H[x,y]-H[x|y]-H[y|x]
 $$
 
 ---
+
+### 2.4 K-L diverence(relative entropy)
+定义: 
+$$ D[p||q]=\sum_{X}P(x)log\frac{p(x)}{q(x)}=E_{X\sim P}log\frac{p(x)}{q(x)}$$ 
+用以描述p(x)和q(x)的距离
+
+性质：
+
+1. $D[p||q]\geq 0$ 
+2. $D[p||q]=0 \iff p(x)=q(x),x∈X$
+3. $\exists x∈X_{p}, p(x)>0&emsp;and&emsp;q(x)=0&emsp;then&emsp;D[p||q]=\infty$ 
+

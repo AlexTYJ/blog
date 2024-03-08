@@ -27,7 +27,7 @@ $$
 
 ---
 
-### 2.2
+### 2.2 Joint entropy & conditional entropy
 
 &emsp;&emsp;类似地，我们可以定义 Joint Entropy:
 
@@ -44,10 +44,14 @@ $$
 &emsp;&emsp;它们之间的关系可以用如下的图表示：
 ![图片1](p1.jpeg)
 
+---
+
+### 2.3 mutual information
+
 &emsp;&emsp;中间的 mutual information 我们定义为:
 
 $$
-I[x,y]\stackrel{def}{=}-E_{X,Y}\frac{logp(x,y)}{p(x)p(y)}
+I[x,y]\stackrel{def}{=}\sum_{X,Y}p(x,y)log\frac{p(x,y)}{p(x)p(y)}
 $$
 
 &emsp;&emsp;可以证明，I(x,y)也可以被表示为
@@ -60,7 +64,7 @@ $$
 
 ### 2.4 K-L diverence(relative entropy)
 定义: 
-$$ D[p||q]=\sum_{X}P(x)log\frac{p(x)}{q(x)}=E_{X\sim P}log\frac{p(x)}{q(x)}$$ 
+$$ D[p||q]=\sum_{X}p(x)log\frac{p(x)}{q(x)}=E_{X\sim P}log\frac{p(x)}{q(x)}$$ 
 用以描述p(x)和q(x)的距离
 
 性质：
@@ -69,3 +73,8 @@ $$ D[p||q]=\sum_{X}P(x)log\frac{p(x)}{q(x)}=E_{X\sim P}log\frac{p(x)}{q(x)}$$
 2. $D[p||q]=0 \iff p(x)=q(x),x∈X$
 3. $\exists x∈X_{p}, p(x)>0&emsp;and&emsp;q(x)=0&emsp;then&emsp;D[p||q]=\infty$ 
 
+注1：可以证明mutual information $I[x,y]=D[p(x,y)||p(x)p(y)]$
+注2：
+
+### 2.5 chainrule
+p(x)

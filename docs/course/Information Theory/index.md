@@ -8,7 +8,7 @@
 
 ## 第二章 熵和互信息基础
 
-### 2.1
+### 2.1 Entropy
 
 &emsp;&emsp;定义离散型随机变量 X~P，其概率密度函数为 p(x)，则我们可以定义熵(Entropy):
 
@@ -32,13 +32,13 @@ $$
 &emsp;&emsp;类似地，我们可以定义 Joint Entropy:
 
 $$
-H[x,y]\stackrel{def}{=}-E_{X,Y\sim p_{X,Y}}logp(x,y)=-\sum_{X,Y}logp(x,y)
+H[x,y]\stackrel{def}{=}-E_{X,Y\sim p_{X,Y}}logp(x,y)=-\sum_{X,Y}p(x,y)logp(x,y)
 $$
 
 &emsp;&emsp;与 Conditional Entropy:
 
 $$
-H[x|y]\stackrel{def}{=}-E_{X,Y\sim p_{X,Y}}logp(x|y)=-\sum_{X,Y}logp(x|y)
+H[x|y]\stackrel{def}{=}-E_{X,Y\sim p_{X,Y}}logp(x|y)=-\sum_{X,Y}p(x,y)logp(x|y)
 $$
 
 &emsp;&emsp;它们之间的关系可以用如下的图表示：
@@ -60,6 +60,10 @@ $$
 I(X,Y)=H[x]-H[x|y]=H[y]-H[y|x]=H[x,y]-H[x|y]-H[y|x]
 $$
 
+Conditional mutual information：
+
+$$ I(X,Y|Z)=H(X|Z)-H(X|Y,Z)=\sum_{x,y,z}log\frac{p(x,y|z)}{p(x|z)p(y|z)}=E_{Z\sim p(z)}I(X,Y|Z=z)$$
+
 ---
 
 ### 2.4 K-L diverence(relative entropy)
@@ -67,14 +71,47 @@ $$
 $$ D[p||q]=\sum_{X}p(x)log\frac{p(x)}{q(x)}=E_{X\sim P}log\frac{p(x)}{q(x)}$$ 
 用以描述p(x)和q(x)的距离
 
+补充定义：$0log\frac{0}{0}=0,0log\frac{0}{q}=0,plog\frac{p}{0}=\infty$ , for $p>0$
+
 性质：
 
 1. $D[p||q]\geq 0$ 
 2. $D[p||q]=0 \iff p(x)=q(x),x∈X$
 3. $\exists x∈X_{p}, p(x)>0&emsp;and&emsp;q(x)=0&emsp;then&emsp;D[p||q]=\infty$ 
 
-注1：可以证明mutual information $I[x,y]=D[p(x,y)||p(x)p(y)]$
-注2：
+注：可以导出互信息的另一种定义方式：$I[x,y]=D[p(x,y)||p(x)p(y)]$
 
-### 2.5 chainrule
-p(x)
+定义：conditon K_L divergence:
+$$ D[p(Y|X)|| q(Y|X)]=\sum_{x}p(x)D[p(Y|X=x)||q(Y|X=x)]=\sum_{x}p(x)\sum_{y}p(y|x)log\frac{p(y|x)}{q(y|x)}=E_{x,y\sim p(x,y)}log\frac{p(y|x)}{q(y|x)} $$
+
+---
+
+### 2.5 chainrules
+联合概率密度函数的链式法则：$p(x_{1},x_{2},...,x_{n})=p(x_{1})p(x_{2}|x_{1},x_{2})p(x_{3}|x_{1},x_{2})...p(x_{n}|x_{1},...,x_{n-1})$
+
+熵的链式法则：
+
+Let $X_{1},X_{2},...,X_{n}$ be drawn according to $p(x_{1},x_{2},...,x_{n})$, then:
+
+$$H (X_{1},X_{2},...,X_{n})=H(x_{1})+H(X_{2}|X_{1})+H(X_{3}|X_{1},X_{2})+...+H(X_{n}|X_{1},X_{2},...,X_{n-1})$$
+
+互信息的链式法则：
+
+$$I(X_{1:n};Y)=I(X_{1};Y) + I(X_{2};Y|X_{1}) + I(X_{3};Y|X_{1},X_{2})+...+I(X_{n};Y|X_{1:n-1})$$
+
+KL散度的链式法则：
+$$ D[p(Y|X)|| q(Y|X)]=D[p(X)||q(X)] + D[p(Y|X)||q(Y|X)] $$ 
+
+---
+
+### 2.6 Jensen inequality and proofs of properties about D,H,I
+#### Theorem 2.6.3 (information inequality) 
+
+Let p(x),q(x),x∈X be two PMF, then $D[p||q]>=0$, with equality if and only if p(x)=q(x), $\forall x ∈ X$
+
+#### Theorem 2.6.4
+
+Let x∈X, then $H(x)\leq log|X|$ with equality iff X has a uniform distribution over X
+
+#### Theorem 2.6.5 (conditioning reduces entropy)
+$H(X|Y)\leq H(x)$

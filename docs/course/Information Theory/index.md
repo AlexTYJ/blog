@@ -115,3 +115,6 @@ Let x∈X, then $H(x)\leq log|X|$ with equality iff X has a uniform distribution
 
 #### Theorem 2.6.5 (conditioning reduces entropy)
 $H(X|Y)\leq H(x)$
+
+#### Theorem 2.6.6
+$H(X_{1},X_{2})\leq H(x_{1})+H(x_{2})$

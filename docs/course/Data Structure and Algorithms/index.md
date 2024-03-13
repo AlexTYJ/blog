@@ -46,7 +46,28 @@ $10^{9}flo = 1sec$
 向量是数组的抽象与泛化，由一组元素按线性次序**封装**而成
 各元素与[0,n)内的**秩(rank)**一一对应  using Rank=unsigned int;
 
+向量ADT接口：
+
+- size()
+- get( r )
+- put(r,e)
+- insert(r,e)
+- remove(r)
+- disordered()
+- sort()
+- find(e)
+- search(e) 相同的返回最后面一个
+- uniquify() 
+-  
+
+
 ## 题库答案
 - C
 
 - D（易错，答案是效率，而不是正确）
+
+- B
+
+- D（这辈子看不到）
+
+- B 时间复杂度O(n),空间复杂度O(1)

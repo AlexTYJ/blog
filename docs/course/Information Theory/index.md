@@ -87,7 +87,7 @@ $$ D[p(Y|X)|| q(Y|X)]=\sum_{x}p(x)D[p(Y|X=x)||q(Y|X=x)]=\sum_{x}p(x)\sum_{y}p(y|
 ---
 
 ### 2.5 chainrules
-联合概率密度函数的链式法则：$p(x_{1},x_{2},...,x_{n})=p(x_{1})p(x_{2}|x_{1},x_{2})p(x_{3}|x_{1},x_{2})...p(x_{n}|x_{1},...,x_{n-1})$
+联合概率密度函数的链式法则：$p(x_{1},x_{2},...,x_{n})=p(x_{1})p(x_{2}|x_{1})p(x_{3}|x_{1},x_{2})...p(x_{n}|x_{1},...,x_{n-1})$
 
 熵的链式法则：
 
@@ -107,14 +107,42 @@ $$ D[p(Y|X)|| q(Y|X)]=D[p(X)||q(X)] + D[p(Y|X)||q(Y|X)] $$
 ### 2.6 Jensen inequality and proofs of properties about D,H,I
 #### Theorem 2.6.3 (information inequality) 
 
-Let p(x),q(x),x∈X be two PMF, then $D[p||q]>=0$, with equality if and only if p(x)=q(x), $\forall x ∈ X$
+Let p(x),q(x),x∈X be two PMF, then $D[p||q]>=0$, 等号成立当且仅当p(x)=q(x), $\forall x ∈ X$
 
 #### Theorem 2.6.4
 
-Let x∈X, then $H(x)\leq log|X|$ with equality iff X has a uniform distribution over X
+Let x∈X, then $H(x)\leq log|X|$ 等号成立当且仅当X服从均匀分布
 
 #### Theorem 2.6.5 (conditioning reduces entropy)
 $H(X|Y)\leq H(x)$
 
 #### Theorem 2.6.6
 $H(X_{1},X_{2})\leq H(x_{1})+H(x_{2})$
+证明：$H(x_{1},x_{2})=H(x_{1})+H(x_{2}|x_{1})\leq H(x_{1})+H(x_{2})$
+
+推广：$H(x_{1},x_{2},...,x_{n})\leq \sum_{i=1}^{n}H(x_{i})$
+
+--- 
+
+### 2.7 log-sum inequality
+#### Theorem 2.7.1
+对于$a_{i},b_{i}>0,i=1,2,…,n,\sum_{i=1}^{n}a_{i}log\frac{a_{i}}{b_{i}}\leq(\sum_{i=1}^{n})log\frac{\sum{i=1}^{n}a_{i}}{\sum{i=1}^{n}b_{i}}$
+
+证明见课堂笔记第13页，思路：构造f(x)=xlogx，这是一个下凸函数。令$x=\frac{a_{i}}{b_{i}}$，再利用Jensen不等式。
+
+通过这个不等式可以轻松证明定理2.6.3
+
+#### Theorem 2.7.2 convexity of KL-divergence
+对于两组PMFs $D[\lambda_{1}p_{1}+\lambda_{2}p_{2}||\lambda_{1}q_{1}+\lambda_{2}q_{2}]\leq \lambda_{1}D[p_{1}||q_{1}]+\lambda_{2}D[p_{2},q_{2}]$
+
+证明：见课堂笔记14页，主要利用定理2.7.1
+
+#### Theorem 2.7.3 concavity of entropy
+
+H[p]是关于p的下凸函数
+
+证明：H[p]=log|X|-D[p||u], 其中$u(x)=\frac{1}{|x|}$ 是X上的均匀分布
+
+#### Theorem 2.7.4 convexity/concavity of mutual information
+
+### 2.8 Diffential entropy

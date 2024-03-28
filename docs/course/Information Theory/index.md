@@ -146,3 +146,41 @@ H[p]是关于p的下凸函数
 #### Theorem 2.7.4 convexity/concavity of mutual information
 
 ### 2.8 Diffential entropy
+在这一章中，我们将熵的概念延拓，从离散延拓至连续。
+
+一些定义：
+
+1. X为连续变量
+2. 分布函数Cumulative distribution function   $F(x)=P_{r}(X\leq x)$
+3. Probability density function(PDF) $f(x)=\frac{d}{dx}F(x)$
+4. Support set S of X: $\{x|f(x)>0\}$
+
+定义：Diffential entropy h(x) of a continous random variable X
+$$
+h(x)\stackrel{def}{=}-\int_{S}f(x)logf(x)dx 
+$$
+where S is the support set of X
+
+类似的，h(x)也可以被写作h[f]，被看做f(x)的函数
+
+#### Theorem 2.8.1 translation invariant
+设X是一个连续随机变量，C是一个常数，则h(X+C)=h(X)
+
+#### Theorem 2.8.2 scaling changes the entropy
+设X是一个连续随机变量，a是一个常数，则h(aX)=h(X)+loga
+
+更一般地，h(AX)=h(X)+log(|det(A)|)
+
+### 2.9 Joint and Conditional differential entropy
+定义：一系列随机变量$X_{1},X_{2},...,X_{n}$的微分熵为$h(X_{1},X_{2},...,X{n})=-\int f(x^{n}logf(x^{n}))$，其中$f(x^{n})$是n维随机向量$x^{n}$的概率密度函数
+
+定义：条件微分熵$h(X|Y)=-\int f(x,y)logf(x|y)dxdy = -E_{x,y~f(x,y)}logf(x|y)$
+
+可以推出，h(X|Y)=h(X,Y)-h(Y)
+
+### 2.10 Relative entropy (KL divergence) and mutual information
+定义：Relative entropy (KL divergence) $D[f||g]=\int f(x)log\frac{f(x)}{g(x)} = E_{x\sim f}log\frac{f(x)}{g(x)}$
+
+约定：$0log\frac{0}{0}=0$
+
+定义：互信息$I(X;Y)=\int f(x,y)log\frac{f(x,y)}{f(x)f(y)}dxdy = E_{x,y \sim f(x,y)}log\frac{f(x,y)}{f(x)f(y)}$

@@ -198,3 +198,29 @@ $h(X_{1},X_{2},...,X_{n})=h(X_{1})+h(X_{2}|X_{1})+h(X_{3}|X_{1},X_{2})+...+h(X_{
 推论：$h(X_{1},X_{2},...,X_{n}) \leq \sum_{i=1}^{n}h(X_{i})$
 
 ### 2.11 Data processing inequalitity
+Definion: markov chain:
+    Random variables X,Y,Z forms a Markov chain X->Y->Z, if the joint probability can be written as P(x,y,z)=p(x)p(y|x)p(z|y)。可以看出它值依赖于前一个状态。而通常的链式法则是p(x,y,z)=p(x)p(y|z)p(z|x,y)，它依赖全部的历史状态。
+
+property:
+
+1. conditional independence: X->Y->Z is a Markov chain 等价于 p(x,z|y)=p(x|y)*p(z|y)
+
+2. 如果X->Y->Z是一个马尔科夫链，那么Z->Y->X也是
+
+3. 如果Z=f(Y) 那么X->Y->Z是马尔科夫链
+
+#### Theorem Data processing inequalitity
+$$ If X->Y->Z, then I(X,Y)\geq I(X,Z) $$
+Corollary: $I(X;Y) \geq I(X;g(Y)) for and function g(·)$
+
+Corollary: $If X->Y->Z, then I(X,Y|Z) \leq I(X,Y)$
+
+## 第三章 Mutual information estimation
+可以运用Fenchel-Legendre变换证明以下不等式：
+
+$$ D[P(x)||Q(x)] \geq sup_{T∈F}E_{x\sim P}[T(x)]-E_{x\sim Q}[e^{T(x)-1}] $$
+
+可以通过最大的下界来估计mutual information
+
+$$ I(Y,Z) \geq \max_{\theta}{\{E_{(Y,Z)\sim D}T_{\theta}(Y,Z) - E_{Y\sim D,Z\sim D}f^{*}(T_{\theta}(Y,Z))\}} $$
+

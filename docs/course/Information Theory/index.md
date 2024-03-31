@@ -184,3 +184,17 @@ where S is the support set of X
 约定：$0log\frac{0}{0}=0$
 
 定义：互信息$I(X;Y)=\int f(x,y)log\frac{f(x,y)}{f(x)f(y)}dxdy = E_{x,y \sim f(x,y)}log\frac{f(x,y)}{f(x)f(y)}$
+
+#### Theorem
+$$ D[f||g]\geq 0 with equality iff f=g almost everywhere $$
+
+推论：
+1. $ I(X,Y) \geq 0 $
+2. $ h(X|Y) \leq h(X) $
+
+#### chain rule
+$h(X_{1},X_{2},...,X_{n})=h(X_{1})+h(X_{2}|X_{1})+h(X_{3}|X_{1},X_{2})+...+h(X_{n}|X_{1},X_{2},...,X_{n-1})$
+
+推论：$h(X_{1},X_{2},...,X_{n}) \leq \sum_{i=1}^{n}h(X_{i})$
+
+### 2.11 Data processing inequalitity

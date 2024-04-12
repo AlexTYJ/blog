@@ -224,3 +224,17 @@ $$ D[P(x)||Q(x)] \geq sup_{T∈F}E_{x\sim P}[T(x)]-E_{x\sim Q}[e^{T(x)-1}] $$
 
 $$ I(Y,Z) \geq \max_{\theta}{\{E_{(Y,Z)\sim D}T_{\theta}(Y,Z) - E_{Y\sim D,Z\sim D}f^{*}(T_{\theta}(Y,Z))\}} $$
 
+## Chapter4 AEP:Asymptotic Equipartion Property
+
+## Chapter5 Entropy rates of a stochastic process
+当$X_{1},x_{2},...,x_{n}$为i.i.d随机变量，$H(X_{1},x_{2},...,x_{n})$随n以速率H(X)(渐进地)线性增加，这个速率称之为熵率
+
+### 5.1 Markov Chain
+随机过程$\{X_{i}\}$是一个带下标的随机变量序列
+
+平稳的：关于时间下标的位移不变。即对于任意n和l，有:$Pr\{ X_{1}=x_{1},X_{2}=x_{2},...X_{n}=x_{n}\} =Pr\{ X_{1+l}=x_{1},X_{2+l}=x_{2},...,X_{n+l}=x_{n}\}$
+
+马尔科夫链：每个随机变量仅仅依赖于前一个变量，即:$Pr(X_{n+1}=x_{n+1}|X_{n}=x_{n},X_{n-1}=x_{n-1},...,X_{1}=x_{1})=Pr(X_{n+1}|X_{n})$，此时可以推出$p(x_{1},x_{2},...,x_{n})=p(x_{1})p(x_{2}|x_{1})p(x_{3}|x_{2})...p(x_{n}|x_{n=1})$
+
+时间不变的：条件概率$p(x_{n+1}|x_{n})$不依赖n，即$Pr\{ X_{n+1}=b|X_{n}=a\} =Pr\{X_{2}=b|x_{1}=a\}$ 对任意的a,b成立
+

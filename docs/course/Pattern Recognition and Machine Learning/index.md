@@ -140,7 +140,8 @@
                     - 平衡点 (BEP, Break-Even Point)是曲线上“查准率=查全率”时的取值，可用来用于度量P-R曲线有交叉的分类器性能高低
                 - ROC曲线：以“假正例率FPR”为横轴，“真正例率TPR”
 
-
+- PCA（Principle Component Analysis）
+    - 
 
 - 卷积神经网络
     - 网络正则化：
@@ -148,4 +149,5 @@
         - 权重衰减： Weight Decay
         - 丢弃法： Dropout
         - 网络结构： Network Structure
-    
+    - CNN：
+        - Zero padding：补零

@@ -10,5 +10,3 @@
 </div>
 <a class="down-button" target="_blank" href="/assets/files/线代II每周总结.pdf"   markdown="1">:fontawesome-solid-download: 下载</a>
  </div>
-
-&emsp;&emsp;本课程全部作业链接如下：

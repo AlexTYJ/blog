@@ -113,6 +113,7 @@ plugins:
 
 nav:
   - Home: index.md
+  - CV: cv/index.md
   - 学习笔记:
       - study/index.md
       - study/two's complement representation.md
@@ -126,7 +127,6 @@ nav:
           - 力学: course/physics/mechanics/index.md
           - 原子物理: course/physics/Atomic Physics/index.md
       - 计算机科学导论: course/jkd/index.md
-      - 概率论与数理统计: course/pas/index.md
       - 信息论: course/Information Theory/index.md
       - 人工智能原理: course/Principles of Artificial Intelligence/index.md
       - 模式识别与机器学习: course/Pattern Recognition and Machine Learning/index.md
@@ -137,6 +137,3 @@ nav:
       - 博尔赫斯《英文诗二首（其二）》自译: essay/240227.md
       - 2023年8月4日随笔一则: essay/230804.md
       - 小说：太阳照常升起: essay/太阳照常升起.md
-      #- 论性单恋与回避型依赖的区别与联系: essay/240304.md
-  - 每周计划:
-      - schedule/index.md

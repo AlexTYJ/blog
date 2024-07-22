@@ -117,7 +117,7 @@ nav:
   - 学习笔记:
       - study/index.md
       - study/two's complement representation.md
-      - 深度学习基础QA:study/深度学习基础QA.md
+      - Notes of Dive into Deeplearning: study/DID.md
   - 课程笔记:
       - course/index.md
       - 线性代数: course/linear algebra/index.md

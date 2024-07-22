@@ -22,9 +22,12 @@ $$\log{(\hat y_j)} = \log\left( \frac{\exp(o_j - \max(o_k))}{\sum_k \exp(o_k - \
 ---
 
 - Q：从直观来看，为了减少参数量，我们应该选择L0范数（非零元素个数）。为什么不选择L0范数？
-- A：L0范数是NP-C（NP完全）问题，
+- A：L0范数是NP-C（NP完全）问题。且L0范数和L1范数的作用以概率1相等
 
+---
 
+- Q：avg和maxpool的使用场景？
+- A：最大池化保留了纹理特征,平均池化保留整体的数据特征;
 
 ## 技术问题
 - Q：下载d2l时遇到问题：Failed to build pandas ERROR: Could not build wheels for pandas, which is required to install pyproject.toml-based projects
@@ -39,3 +42,7 @@ $$\log{(\hat y_j)} = \log\left( \frac{\exp(o_j - \max(o_k))}{\sum_k \exp(o_k - \
 - 为什么不采用sigmoid而采用relu：sigmoid在输入值太小或太大时会发生梯度消失。同时ReLu会使一部分神经元的输出为0，这样就造成了网络的稀疏性，并且减少了参数的相互依存关系，缓解了过拟合问题的发生。
 
 - Xiever初始化：想要自身的方差不变，需要设置方差为 $\frac{1}{n_{in}}$。想要梯度方差不变，需要设置方差为 $\frac{1}{n_{out}}$，但不能兼得，所以设置方差为 $ \sqrt{\frac{2}{n_{in}+n_{out}}} $
+
+- pooling层作用：降低卷积层对位置的敏感性，同时降低对空间降采样表示的敏感性。
+
+- 默认情况下，深度学习框架中的步幅与汇聚窗口的大小相同

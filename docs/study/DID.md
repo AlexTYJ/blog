@@ -8,7 +8,7 @@
 - A：
 ---
 - Q：softmax计算的时候有什么技巧？
-- A：原函数是 $\hat{y} = \frac{e^{ o_{j}} }{\sum_{k}{e^{o_{k}}}}$，如果某个 $ O_{k}$ 非常大，则会导致分母特别大，超出数据范围，此为上溢。解决办法：$\hat{y} = \frac{e^{ o_{j}}e^{-o_{max}} }{\sum_{k}{e^{o_{k}} e^{-o_{max}}}}$ = $\frac{e^{o_j-o_{max}}}{\sum_{k}{e^{o_k-o_{max}}}}$ ，但这样会出现分子特别小，甚至接近0的情况，使得log之后为负无穷，此为下溢。所以，进一步改进：
+- A：原函数是 $\hat{y} = \frac{e^{ o_{j}} }{\sum_{k}{e^{o_{k}}}}$，如果某个 $ O_k$ 非常大，则会导致分母特别大，超出数据范围，此为上溢。解决办法：$\hat{y} = \frac{e^{ o_{j}}e^{-o_{max}} }{\sum_{k}{e^{o_{k}} e^{-o_{max}}}}$ = $\frac{e^{o_j-o_{max}}}{\sum_{k}{e^{o_k-o_{max}}}}$ ，但这样会出现分子特别小，甚至接近0的情况，使得log之后为负无穷，此为下溢。所以，进一步改进：
 
 $$\log{(\hat y_j)} = \log\left( \frac{\exp(o_j - \max(o_k))}{\sum_k \exp(o_k - \max(o_k))}\right)   
 = \log{(\exp(o_j - \max(o_k)))}-\log{\left( \sum_k \exp(o_k - \max(o_k)) \right)} 

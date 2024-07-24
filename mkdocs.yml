@@ -118,6 +118,7 @@ nav:
       - study/index.md
       - study/two's complement representation.md
       - Notes of Dive into Deeplearning: study/DID.md
+      - CNN知识总结: study/CNN.md 
   - 课程笔记:
       - course/index.md
       - 线性代数: course/linear algebra/index.md

@@ -10,9 +10,13 @@
 - Q：softmax计算的时候有什么技巧？
 - A：原函数是 $\hat{y} = \frac{e^{ o_{j}} }{\sum_{k}{e^{o_{k}}}}$，如果某个 $ O_k$ 非常大，则会导致分母特别大，超出数据范围，此为上溢。解决办法：$\hat{y} = \frac{e^{ o_{j}}e^{-o_{max}} }{\sum_{k}{e^{o_{k}} e^{-o_{max}}}}$ = $\frac{e^{o_j-o_{max}}}{\sum_{k}{e^{o_k-o_{max}}}}$ ，但这样会出现分子特别小，甚至接近0的情况，使得log之后为负无穷，此为下溢。所以，进一步改进：
 
-$$\log{(\hat y_j)} = \log\left( \frac{\exp(o_j - \max(o_k))}{\sum_k \exp(o_k - \max(o_k))}\right)   
-= \log{(\exp(o_j - \max(o_k)))}-\log{\left( \sum_k \exp(o_k - \max(o_k)) \right)} 
-= o_j - \max(o_k) -\log{\left( \sum_k \exp(o_k - \max(o_k)) \right)}.$$
+$$
+\begin{align*}
+\log{(\hat y_j)} &= \log\left( \frac{\exp(o_j - \max(o_k))}{\sum_k \exp(o_k - \max(o_k))}\right)  \\
+&= \log{(\exp(o_j - \max(o_k)))}-\log{\left( \sum_k \exp(o_k - \max(o_k)) \right)}  \\
+&= o_j - \max(o_k) -\log{\left( \sum_k \exp(o_k - \max(o_k)) \right)}.
+\end{align*}
+$$
 
 ---
 
@@ -34,6 +38,9 @@ $$\log{(\hat y_j)} = \log\left( \frac{\exp(o_j - \max(o_k))}{\sum_k \exp(o_k - \
 - A：经排查是d2l的问题，改为pip install d2l==0.17.0
 ---
 
+- Q：为什么Y=torch.zeros((X.shap[0]-h+1,X.shape[1]-w+1))要加两个括号？
+- A：因为torch.zeros后面要求一个元组，而两个括号保证了是一个元组。
+
 ## 重点
 - 在高斯噪声的假设下，最小化均方误差等价于对线性模型的极大似然估计。
 
@@ -41,8 +48,8 @@ $$\log{(\hat y_j)} = \log\left( \frac{\exp(o_j - \max(o_k))}{\sum_k \exp(o_k - \
 
 - 为什么不采用sigmoid而采用relu：sigmoid在输入值太小或太大时会发生梯度消失。同时ReLu会使一部分神经元的输出为0，这样就造成了网络的稀疏性，并且减少了参数的相互依存关系，缓解了过拟合问题的发生。
 
-- Xiever初始化：想要自身的方差不变，需要设置方差为 $\frac{1}{n_{in}}$。想要梯度方差不变，需要设置方差为 $\frac{1}{n_{out}}$，但不能兼得，所以设置方差为 $ \sqrt{\frac{2}{n_{in}+n_{out}}} $
+- Xiever初始化：想要自身的方差不变，需要设置方差为 $\frac{1}{n_{in}}$。想要梯度方差不变，需要设置方差为 $\frac{1}{n_{out}}$，但不能兼得，所以设置方差为 $\sqrt{ \frac{2}{n_{in} + n_{out}} }$  
 
 - pooling层作用：降低卷积层对位置的敏感性，同时降低对空间降采样表示的敏感性。
 
-- 默认情况下，深度学习框架中的步幅与汇聚窗口的大小相同
+- 默认情况下，深度学习框架中的步幅与汇聚窗口的大小相同。

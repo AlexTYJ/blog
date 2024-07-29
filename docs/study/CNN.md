@@ -1,4 +1,4 @@
-# CNN知识总结
+# CNN进阶知识总结
 
 ## CNN的动机
 
@@ -85,3 +85,301 @@ torch.nn.ConvTranspose2d参数：
 - groups(int,optional):是否使用分组卷积。默认1（传统卷积）。
 - bias(bool,optinal):是否加偏置，默认为True
 - dilation(int or tuple,optional):是否使用空洞卷积，默认为1（普通卷积）
+
+## U-net
+结构见下图：
+
+![U-net](./U-net.png "U-net")
+
+其中绿色箭头就是转置卷积。
+
+解码在将下采样(反卷积)数据恢复的时候，特征scale会发生变化，必然会有信息的丢失，这个时候, skip connention的作用就凸显出来了, skip connention起到了补充信息的作用。灰色箭头就是skip connention。在U-Net中采用叠操作（concatenation） ,这里也指的是复制和剪切(copy and crop)
+## Dilated Convolutions
+
+### 优势
+虽然池化层也可以扩大感受野，但是会使得分辨率变低。Dilated Convolutions可以在扩大感受野保持分辨率。
+
+### 重要原理
+示意图如下：
+
+![Dilated Convolutions-3](./Dilated Convolutions-3.png "Dilated Convolutions-3")
+
+膨胀卷积的r是相邻间隔的距离。也就是说r=1的时候是普通卷积。r=2就是间隔1，即上图的情况。
+
+### Hybrid Dilated Convolution(HDC):
+
+当设计多个膨胀卷积层堆叠的时候，$r=[r_1,r_2,...,r_n]$ 需要满足：$M_i=max\{M_{i+1}-2r_i,M_{i+1}-2(M_{i+1}-r_i),r_i\}$ ，其中 $M_n=r_n$，且需满足 $M_2\leq K$。我们一般取 $r_1=1$。
+
+论文中还建议将r设置为$r=[1,2,3,1,2,3]$这种锯齿结构，并要求r的公约数不大于1，否则会出现感受野中有元素权重为0的情况。如下图：
+
+![Dilated Convolutions-1](./Dilated Convolutions-1.png "Dilated Convolutions-1")
+
+我们希望感受野如下图：
+
+![Dilated Convolutions-2](./Dilated Convolutions-2.png "Dilated Convolutions-2")
+
+
+## 经典网络实现汇总
+
+### LeNet
+
+```python
+net = nn.Sequential(
+    nn.Conv2d(1, 6, kernel_size=5, padding=2), nn.Sigmoid(),
+    nn.AvgPool2d(kernel_size=2, stride=2),
+    nn.Conv2d(6, 16, kernel_size=5), nn.Sigmoid(),
+    nn.AvgPool2d(kernel_size=2, stride=2),
+    nn.Flatten(),
+    nn.Linear(16 * 5 * 5, 120), nn.Sigmoid(),
+    nn.Linear(120, 84), nn.Sigmoid(),
+    nn.Linear(84, 10))
+```
+
+### AlexNet
+
+```python
+net = nn.Sequential(
+    nn.Conv2d(1, 96, kernel_size=11, stride=4, padding=1), nn.ReLU(),
+    nn.MaxPool2d(kernel_size=3, stride=2),
+    nn.Conv2d(96, 256, kernel_size=5, padding=2), nn.ReLU(),
+    nn.MaxPool2d(kernel_size=3, stride=2),
+    nn.Conv2d(256, 384, kernel_size=3, padding=1), nn.ReLU(),
+    nn.Conv2d(384, 384, kernel_size=3, padding=1), nn.ReLU(),
+    nn.Conv2d(384, 256, kernel_size=3, padding=1), nn.ReLU(),
+    nn.MaxPool2d(kernel_size=3, stride=2),
+    nn.Flatten(),
+    nn.Linear(6400, 4096), nn.ReLU(),
+    nn.Dropout(p=0.5),
+    nn.Linear(4096, 4096), nn.ReLU(),
+    nn.Dropout(p=0.5),
+    # 由于这里使用Fashion-MNIST，所以用类别数为10，而非论文中的1000
+    nn.Linear(4096, 10))
+```
+
+### VGG
+
+```python
+def vgg_block(num_convs, in_channels, out_channels):
+    layers = []
+    for _ in range(num_convs):
+        layers.append(nn.Conv2d(in_channels, out_channels,kernel_size=3, padding=1))
+        layers.append(nn.ReLU())
+        in_channels = out_channels
+    layers.append(nn.MaxPool2d(kernel_size=2,stride=2))
+    return nn.Sequential(*layers)
+
+def vgg(conv_arch):
+    conv_blks = []
+    in_channels = 1
+    # 卷积层部分
+    for (num_convs, out_channels) in conv_arch:
+        conv_blks.append(vgg_block(num_convs, in_channels, out_channels))
+        in_channels = out_channels
+    return nn.Sequential(
+        *conv_blks, nn.Flatten(),
+        # 全连接层部分
+        nn.Linear(out_channels * 7 * 7, 4096), nn.ReLU(), nn.Dropout(0.5),
+        nn.Linear(4096, 4096), nn.ReLU(), nn.Dropout(0.5),
+        nn.Linear(4096, 10))
+
+conv_arch = ((1, 64), (1, 128), (2, 256), (2, 512), (2, 512))
+
+net = vgg(conv_arch)
+```
+
+### NiN
+``` python
+def nin_block(in_channels, out_channels, kernel_size, strides, padding):
+    return nn.Sequential(
+        nn.Conv2d(in_channels, out_channels, kernel_size, strides, padding),
+        nn.ReLU(),
+        nn.Conv2d(out_channels, out_channels, kernel_size=1), nn.ReLU(),
+        nn.Conv2d(out_channels, out_channels, kernel_size=1), nn.ReLU())
+
+net = nn.Sequential(
+    nin_block(1, 96, kernel_size=11, strides=4, padding=0),
+    nn.MaxPool2d(3, stride=2),
+    nin_block(96, 256, kernel_size=5, strides=1, padding=2),
+    nn.MaxPool2d(3, stride=2),
+    nin_block(256, 384, kernel_size=3, strides=1, padding=1),
+    nn.MaxPool2d(3, stride=2),
+    nn.Dropout(0.5),
+    nin_block(384, 10, kernel_size=3, strides=1, padding=1),
+    nn.AdaptiveAvgPool2d((1, 1)),
+    nn.Flatten())
+     
+```
+
+### GoogLeNet
+``` python
+class Inception(nn.Module):
+    # c1--c4是每条路径的输出通道数
+    def __init__(self, in_channels, c1, c2, c3, c4, **kwargs):
+        super(Inception, self).__init__(**kwargs)
+        # 线路1，单1x1卷积层
+        self.p1_1 = nn.Conv2d(in_channels, c1, kernel_size=1)
+        # 线路2，1x1卷积层后接3x3卷积层
+        self.p2_1 = nn.Conv2d(in_channels, c2[0], kernel_size=1)
+        self.p2_2 = nn.Conv2d(c2[0], c2[1], kernel_size=3, padding=1)
+        # 线路3，1x1卷积层后接5x5卷积层
+        self.p3_1 = nn.Conv2d(in_channels, c3[0], kernel_size=1)
+        self.p3_2 = nn.Conv2d(c3[0], c3[1], kernel_size=5, padding=2)
+        # 线路4，3x3最大汇聚层后接1x1卷积层
+        self.p4_1 = nn.MaxPool2d(kernel_size=3, stride=1, padding=1)
+        self.p4_2 = nn.Conv2d(in_channels, c4, kernel_size=1)
+
+    def forward(self, x):
+        p1 = F.relu(self.p1_1(x))
+        p2 = F.relu(self.p2_2(F.relu(self.p2_1(x))))
+        p3 = F.relu(self.p3_2(F.relu(self.p3_1(x))))
+        p4 = F.relu(self.p4_2(self.p4_1(x)))
+        # 在通道维度上连结输出
+        return torch.cat((p1, p2, p3, p4), dim=1)
+
+b1 = nn.Sequential(nn.Conv2d(1, 64, kernel_size=7, stride=2, padding=3),
+                   nn.ReLU(),
+                   nn.MaxPool2d(kernel_size=3, stride=2, padding=1))
+
+b2 = nn.Sequential(nn.Conv2d(64, 64, kernel_size=1),
+                   nn.ReLU(),
+                   nn.Conv2d(64, 192, kernel_size=3, padding=1),
+                   nn.ReLU(),
+                   nn.MaxPool2d(kernel_size=3, stride=2, padding=1))
+
+b3 = nn.Sequential(Inception(192, 64, (96, 128), (16, 32), 32),
+                   Inception(256, 128, (128, 192), (32, 96), 64),
+                   nn.MaxPool2d(kernel_size=3, stride=2, padding=1))
+        
+    
+b4 = nn.Sequential(Inception(480, 192, (96, 208), (16, 48), 64),
+                   Inception(512, 160, (112, 224), (24, 64), 64),
+                   Inception(512, 128, (128, 256), (24, 64), 64),
+                   Inception(512, 112, (144, 288), (32, 64), 64),
+                   Inception(528, 256, (160, 320), (32, 128), 128),
+                   nn.MaxPool2d(kernel_size=3, stride=2, padding=1))
+
+b5 = nn.Sequential(Inception(832, 256, (160, 320), (32, 128), 128),
+                   Inception(832, 384, (192, 384), (48, 128), 128),
+                   nn.AdaptiveAvgPool2d((1,1)),
+                   nn.Flatten())
+
+net = nn.Sequential(b1, b2, b3, b4, b5, nn.Linear(1024, 10))
+```
+
+### ResNet
+``` python
+class Residual(nn.Module):  #@save
+    def __init__(self, input_channels, num_channels,
+                 use_1x1conv=False, strides=1):
+        super().__init__()
+        self.conv1 = nn.Conv2d(input_channels, num_channels,
+                               kernel_size=3, padding=1, stride=strides)
+        self.conv2 = nn.Conv2d(num_channels, num_channels,
+                               kernel_size=3, padding=1)
+        if use_1x1conv:
+            self.conv3 = nn.Conv2d(input_channels, num_channels,
+                                   kernel_size=1, stride=strides)
+        else:
+            self.conv3 = None
+        self.bn1 = nn.BatchNorm2d(num_channels)
+        self.bn2 = nn.BatchNorm2d(num_channels)
+
+    def forward(self, X):
+        Y = F.relu(self.bn1(self.conv1(X)))
+        Y = self.bn2(self.conv2(Y))
+        if self.conv3:
+            X = self.conv3(X)
+        Y += X
+        return F.relu(Y)
+
+    b1 = nn.Sequential(nn.Conv2d(1, 64, kernel_size=7, stride=2, padding=3),
+                   nn.BatchNorm2d(64), nn.ReLU(),
+                   nn.MaxPool2d(kernel_size=3, stride=2, padding=1))
+
+    def resnet_block(input_channels, num_channels, num_residuals,
+                 first_block=False):
+    blk = []
+    for i in range(num_residuals):
+        if i == 0 and not first_block:
+            blk.append(Residual(input_channels, num_channels,
+                                use_1x1conv=True, strides=2))
+        else:
+            blk.append(Residual(num_channels, num_channels))
+    return blk
+
+    b2 = nn.Sequential(*resnet_block(64, 64, 2, first_block=True))
+    b3 = nn.Sequential(*resnet_block(64, 128, 2))
+    b4 = nn.Sequential(*resnet_block(128, 256, 2))
+    b5 = nn.Sequential(*resnet_block(256, 512, 2)) 
+
+    net = nn.Sequential(b1, b2, b3, b4, b5,nn.AdaptiveAvgPool2d((1,1)),nn.Flatten(), nn.Linear(512, 10)) 
+```
+
+### DenseNet
+``` python
+def conv_block(input_channels, num_channels):
+    return nn.Sequential(
+        nn.BatchNorm2d(input_channels), nn.ReLU(),
+        nn.Conv2d(input_channels, num_channels, kernel_size=3, padding=1))
+
+class DenseBlock(nn.Module):
+    def __init__(self, num_convs, input_channels, num_channels):
+        super(DenseBlock, self).__init__()
+        layer = []
+        for i in range(num_convs):
+            layer.append(conv_block(
+                num_channels * i + input_channels, num_channels))
+        self.net = nn.Sequential(*layer)
+
+    def forward(self, X):
+        for blk in self.net:
+            Y = blk(X)
+            # 连接通道维度上每个块的输入和输出
+            X = torch.cat((X, Y), dim=1)
+        return X
+
+
+    #过渡层，这是由于每个稠密块都会带来通道数的增加，
+    #使用过多则会过于复杂化模型。 而过渡层可以用来控制模型复杂度。 
+    #它通过卷积层来减小通道数，并使用步幅为2的平均汇聚层减半高和宽，从而进一步降低模型复杂度。
+def transition_block(input_channels, num_channels):
+    return nn.Sequential(
+        nn.BatchNorm2d(input_channels), nn.ReLU(),
+        nn.Conv2d(input_channels, num_channels, kernel_size=1),
+        nn.AvgPool2d(kernel_size=2, stride=2))
+
+b1 = nn.Sequential(
+    nn.Conv2d(1, 64, kernel_size=7, stride=2, padding=3),
+    nn.BatchNorm2d(64), nn.ReLU(),
+    nn.MaxPool2d(kernel_size=3, stride=2, padding=1))
+
+# num_channels为当前的通道数
+num_channels, growth_rate = 64, 32
+num_convs_in_dense_blocks = [4, 4, 4, 4]
+blks = []
+for i, num_convs in enumerate(num_convs_in_dense_blocks):
+    blks.append(DenseBlock(num_convs, num_channels, growth_rate))
+    # 上一个稠密块的输出通道数
+    num_channels += num_convs * growth_rate
+    # 在稠密块之间添加一个转换层，使通道数量减半
+    if i != len(num_convs_in_dense_blocks) - 1:
+        blks.append(transition_block(num_channels, num_channels // 2))
+        num_channels = num_channels // 2
+
+net = nn.Sequential(
+    b1, *blks,
+    nn.BatchNorm2d(num_channels), nn.ReLU(),
+    nn.AdaptiveAvgPool2d((1, 1)),
+    nn.Flatten(),
+    nn.Linear(num_channels, 10))
+```
+### 性能对比
+|         | loss  | train acc  | test acc  |examples/sec on cuda:0|
+|:-------:|:------:|:------:|:------:|:------:|
+| LeNet   | 0.469 | 0.823 | 0.779 |35726.4|
+| AlexNet  | 0.331 | 0.878  | 0.883 |3941.8|
+| VGG   | 0.178 | 0.935 | 0.920 |2463.7|
+| NiN |0.370|0.866|0.877|3087.6|
+| GoogLeNet |0.262|0.900|0.886|3265.5|
+| ResNet |0.012|0.997|0.893|5032.7|
+| DenseNet |0.140|0.948|0.885|5626.3|

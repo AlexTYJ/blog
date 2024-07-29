@@ -110,8 +110,8 @@ plugins:
   #        repository: wxxcl0825/Blog
   #        branch: master
   # - git-authors
-  - statistics: 
-      page_check_metadata:
+  #- statistics: 
+  #    page_check_metadata:
 
 nav:
   - Home: index.md

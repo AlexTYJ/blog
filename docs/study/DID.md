@@ -33,6 +33,14 @@ $$
 - Q：avg和maxpool的使用场景？
 - A：最大池化保留了纹理特征,平均池化保留整体的数据特征;
 
+
+---
+- Q:为什么反传是前向传播两倍？
+- A:
+
+![BP](./BP.png "BP")
+
+
 ## 技术问题
 - Q：下载d2l时遇到问题：Failed to build pandas ERROR: Could not build wheels for pandas, which is required to install pyproject.toml-based projects
 - A：经排查是d2l的问题，改为pip install d2l==0.17.0

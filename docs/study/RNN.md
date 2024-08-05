@@ -1,5 +1,5 @@
 # RNN进阶知识总结
-## RNN BP反传推导
+## Truncated BPTT
 RNN基本公式为：
 
 $$ 
@@ -69,12 +69,49 @@ $$
 
 我们发现，$\frac{\partial L}{\partial \mathbf{h}_t}$ 中 $\mathbf{W}_{hh}^\top$ 的**幂非常大**。在这个幂中，小于1的特征值将会消失，大于1的特征值将会发散。这在数值上是不稳定的，表现形式为梯度消失或梯度爆炸。
 
-在实际应用中，采用常规截断或者随机截断。然而，随机截断在实际应用中并不好。
+
+首先我们还可以通过“梯度裁剪”的方法来限制梯度 $\mathbf{g}$ 不超过 $\theta$ ：
+$$ \mathbf{g} \leftarrow \min\left(1, \frac{\theta}{\|\mathbf{g}\|}\right) \mathbf{g} $$
+
+此外，我们可以采用**Truncated BPTT**
+
+在实际应用中，采用常规截断或者随机截断。
 
 下面是三种方法的示意图：
 
 ![truncated-bptt](./truncated-bptt.svg "truncated-bptt")
 
+### 常规截断
+每次处理一个时间步，每前向传播 $k_1$ 步，后向传播 $k_2$ 步。
 
-此外，我们还可以通过“梯度裁剪”的方法来限制梯度 $\mathbf{g}$ 不超过 $\theta$ ：
-$$ \mathbf{g} \leftarrow \min\left(1, \frac{\theta}{\|\mathbf{g}\|}\right) \mathbf{g} $$
+```
+for t from 1 to T do 
+    Run the RNN for one step, computing h_t and z_t
+    if t divides k_1 then  
+        Run BPTT, from t down to t−k_2
+    end if
+end for
+```
+
+参数确定：
+- TBPTT(n, n): 传统的BPTT
+
+- TBPTT(1, n): 每向前处理一个时间步，便后向传播所有已看到的时间步。(Williams and Peng提出的经典的TBPTT)
+
+- TBPTT( $k_1$ ,1): 网络并没有足够的时序上下文来学习，严重的依赖内部状态和输入。
+
+- TBPTT( $k_1$ , $k_2$), where $k_1 < k_2 < n$ :对于每个序列，都进行了多次更新，可以加速训练。
+
+- TBPTT( $k_1$ , $k_2$), where $k_1 = k_2$ : 类似于预处理的时候分batch，TensorFlow默认是用这种
+
+在以下博文中，有上面五种方式的对比：
+https://r2rt.com/styles-of-truncated-backpropagation.html
+
+
+## 随机截断
+
+用一个随机变量替换 $\partial h_t/\partial w_h$, 使用序列 $\xi_t$ 来实现。序列预定义了 $0 \leq \pi_t \leq 1$ ，其中 $P(\xi_t = 0) = 1-\pi_t$ 且 $P(\xi_t = \pi_t^{-1}) = \pi_t$ ,  因此 $E[\xi_t] = 1$ 。
+
+效果并不好。
+
+## 

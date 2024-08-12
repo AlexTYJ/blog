@@ -122,6 +122,8 @@ nav:
       - Notes of Dive into Deeplearning: study/DID.md
       - CNN进阶知识总结: study/CNN.md 
       - RNN进阶知识总结: study/RNN.md
+      - Transformer: study/transformer.md
+      - 优化算法: study/Optimization.md
   - 课程笔记:
       - course/index.md
       - 线性代数: course/linear algebra/index.md
@@ -135,7 +137,9 @@ nav:
       - 人工智能原理: course/Principles of Artificial Intelligence/index.md
       - 模式识别与机器学习: course/Pattern Recognition and Machine Learning/index.md
       - 数据结构与算法: course/Data Structure and Algorithms/index.md
-  - 技术博客: technical/index.md
+  - 技术博客: 
+    - technical/index.md
+    - 虚拟环境配置: technical/environment.md
   - 随笔:
       - essay/index.md
       - 博尔赫斯《英文诗二首（其二）》自译: essay/240227.md

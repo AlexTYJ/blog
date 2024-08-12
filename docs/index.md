@@ -8,7 +8,6 @@ statistics: True
 
 欢迎学习交流！
 
-本站共有 {{ pages }} 个页面，{{ words }} 个字，{{ codes }} 行代码
 ## About
 
 [:fontawesome-brands-github:](https://github.com/AlexTYJ) [My GitHub](https://github.com/AlexTYJ)

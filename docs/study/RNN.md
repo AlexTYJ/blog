@@ -108,10 +108,9 @@ end for
 https://r2rt.com/styles-of-truncated-backpropagation.html
 
 
-## 随机截断
+### 随机截断
 
 用一个随机变量替换 $\partial h_t/\partial w_h$, 使用序列 $\xi_t$ 来实现。序列预定义了 $0 \leq \pi_t \leq 1$ ，其中 $P(\xi_t = 0) = 1-\pi_t$ 且 $P(\xi_t = \pi_t^{-1}) = \pi_t$ ,  因此 $E[\xi_t] = 1$ 。
 
 效果并不好。
 
-## 

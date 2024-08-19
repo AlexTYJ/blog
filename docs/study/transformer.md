@@ -25,7 +25,7 @@ $$
 - $\alpha(\mathbf{q}, \mathbf{k})$ 是概率密度函数
 
 
-在Transformer中，**查询和键的长度 $d$ 相同**，所以我们取评分函数为：$a(\mathbf q, \mathbf k) = \frac{\mathbf{q}^\top \mathbf{k}}{\sqrt{d}}$
+在Transformer中，**查询和键的特征维度 $d$ 相同**，所以我们取评分函数为：$a(\mathbf q, \mathbf k) = \frac{\mathbf{q}^\top \mathbf{k}}{\sqrt{d}}$
 
 写成批量形式，设查询 $\mathbf Q\in\mathbb R^{n\times d}$、 键 $\mathbf K\in\mathbb R^{m\times d}$ 值 $\mathbf V\in\mathbb R^{m\times v}$ ,则：
 
@@ -65,11 +65,30 @@ $$
 
 解释一下与普通MLP不同之处：这里输入是n个d维向量，对每个d维向量分别作MLP，输出也是n个d维向量。这个MLP的参数是共享的。
 
-##
+## Add & Norm 
 
 采用Layer Norm:norm的方向改变了
 
+采用残差连接
+
+## Mask机制
+
+### Padding Mask
+
+由于输入序列长度不一样，我们需要对输入特征进行对齐。
+
+具体而言，对于较短的长度的词向量，在后面添加负无穷，这样softmax后就为0。对于较长的，直接截断。
+
+当值是0的时候，点乘后也是0，所以这个位置的权重就变为0，也就是无视该位置的影响。
+
+### Sequence Mask
+
+Sequence Mask是为了使得Decoder不能看见未来的信息。
+
+具体而言，产生一个上三角矩阵 $\in\mathbb R^{n\times m}$，上三角的值全为负无穷。然后与原来的 $\mathbf Q \mathbf K^\top$ 相加，再进行后续运算。这样负无穷的地方经过softmax后会变成0。
+
 ## Bert
+
 
 
 

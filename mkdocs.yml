@@ -124,15 +124,18 @@ nav:
       - RNN进阶知识总结: study/RNN.md
       - Transformer: study/transformer.md
       - 优化算法: study/Optimization.md
+      - learning rate scheduler: study/lrscheduler.md
+      - warm up: study/warm up.md
+      - ring all-reduce: study/ring all-reduce.md
   - 课程笔记:
       - course/index.md
-      - 线性代数: course/linear algebra/index.md
-      - 微积分: course/calculus/index.md
-      - 物理课程:
-          - course/physics/index.md
-          - 力学: course/physics/mechanics/index.md
-          - 原子物理: course/physics/Atomic Physics/index.md
-      - 计算机科学导论: course/jkd/index.md
+      #- 线性代数: course/linear algebra/index.md
+      #- 微积分: course/calculus/index.md
+      #- 物理课程:
+          #- course/physics/index.md
+          #- 力学: course/physics/mechanics/index.md
+          #- 原子物理: course/physics/Atomic Physics/index.md
+      #- 计算机科学导论: course/jkd/index.md
       - 信息论: course/Information Theory/index.md
       - 人工智能原理: course/Principles of Artificial Intelligence/index.md
       - 模式识别与机器学习: course/Pattern Recognition and Machine Learning/index.md
@@ -140,6 +143,7 @@ nav:
   - 技术博客: 
     - technical/index.md
     - 虚拟环境配置: technical/environment.md
+    - MPI: technical/MPI.md
   - 随笔:
       - essay/index.md
       - 博尔赫斯《英文诗二首（其二）》自译: essay/240227.md

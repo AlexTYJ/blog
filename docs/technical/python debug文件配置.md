@@ -2,7 +2,7 @@
 
 下面是一个示例
 
-````
+```
 {
     "version": "0.2.0",
     "configurations": [

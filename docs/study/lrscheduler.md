@@ -104,7 +104,7 @@ $$
 
 - eta_min：学习率最小值
 
-- T_max：极值点，当 $epoch<T\_ max$ 时学习率递增，当 $epoch<T\_ max<2epoch$ 时学习率递减。此后做周期性变化直到收敛
+- T_max：极值点，当 $epoch<T\_ max$ 时学习率递增，当 $epoch<T\_ max<2epoch$ 时学习率递减。
 
 - last_epoch ：last_epoch之后恢复lr为initial_lr。使用场景：如果训练了很多个epoch后中断了，继续训练时，这个值就等于加载的模型的epoch。默认为-1，表示从头开始训练，即从epoch=1开始。
 

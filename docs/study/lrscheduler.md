@@ -54,7 +54,7 @@ torch.optim.lr_scheduler.MultiStepLR(optimizer,milestones,gamma=0.1,last_epoch=-
 
 - optimizer：模型优化器
 
-- milestones 数据类型是递增的list 按设定的间隔调整学习率
+- milestones 数据类型是递增的list，在每一个milestone的时候将原来学习率乘 $\gamma$
 
 - gamma：衰减率（默认0.1）
 
@@ -72,7 +72,7 @@ for epoch in range(100):
     scheduler.step()
 ```
 
-### 3 MultiStepLR
+### 3 ExponentialLR
 
 $$
 new\_ lr=initial\_ lr* \gamma ^{epoch}
@@ -95,6 +95,7 @@ torch.optim.lr_scheduler.ExponentialLR(optimizer,gamma,last_epoch=-1,verbose=Fal
 $$
 \begin{align*}
 new\_ lr &= eta\_ min + \frac{1}{2}(initial\_ lr - eta\_ min)(1+cos(\frac{epoch}{T\_ max}\pi))
+\end{align*}
 $$
 
 - optimizer：模型优化器

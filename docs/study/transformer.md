@@ -81,14 +81,15 @@ $$
 
 当值是0的时候，点乘后也是0，所以这个位置的权重就变为0，也就是无视该位置的影响。
 
+位置：encoder和decoder中的softmax之前
+
 ### Sequence Mask
 
 Sequence Mask是为了使得Decoder不能看见未来的信息。
 
 具体而言，产生一个上三角矩阵 $\in\mathbb R^{n\times m}$，上三角的值全为负无穷。然后与原来的 $\mathbf Q \mathbf K^\top$ 相加，再进行后续运算。这样负无穷的地方经过softmax后会变成0。
 
-## Bert
-
+位置：decoder中第一个自注意力机制时
 
 
 

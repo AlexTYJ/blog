@@ -128,6 +128,7 @@ nav:
       - warm up: study/warm up.md
       - ring all-reduce: study/ring all-reduce.md
       - DDP: study/DDP.md
+      - 语言模型: study/LM.md
   - 课程笔记:
       - course/index.md
       #- 线性代数: course/linear algebra/index.md

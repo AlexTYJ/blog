@@ -55,3 +55,5 @@ DataLoader(dataset, batch_size=1, shuffle=False, sampler=None,
 - timeout (numeric, optional): 如果是正数，表明等待从worker进程中收集一个batch等待的时间，若超出设定的时间还没有收集到，那就不收集这个内容了。(default: 0) 
 
 - worker_init_fn (callable, optional*):每个worker初始化函数 (default: None)
+
+# dataloader的原理

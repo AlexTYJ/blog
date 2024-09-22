@@ -57,3 +57,5 @@ DataLoader(dataset, batch_size=1, shuffle=False, sampler=None,
 - worker_init_fn (callable, optional*):每个worker初始化函数 (default: None)
 
 # dataloader的原理
+
+![dataloader](./dataloader.png "dataloader")

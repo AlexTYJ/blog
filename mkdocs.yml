@@ -150,9 +150,9 @@ nav:
     - 虚拟环境配置: technical/environment.md
     - MPI: technical/MPI.md
     - python debug 配置: technical/python debug文件配置.md
-    - DDP: technical\DDP.md
-    - dataset-dataloader: technical\dataset-dataloader.md
-    - Tmux: technical\Tmux.md
+    - DDP: technical/DDP.md
+    - dataset-dataloader: technical/dataset-dataloader.md
+    - Tmux: technical/Tmux.md
   - 随笔:
       - essay/index.md
       - 博尔赫斯《英文诗二首（其二）》自译: essay/240227.md

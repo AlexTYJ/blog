@@ -151,7 +151,7 @@ nav:
     - MPI: technical/MPI.md
     - python debug 配置: technical/python debug文件配置.md
     - DDP: technical\DDP.md
-    - dataset&dataloader: technical\dataset-dataloader.md
+    - dataset-dataloader: technical\dataset-dataloader.md
     - Tmux: technical\Tmux.md
   - 随笔:
       - essay/index.md

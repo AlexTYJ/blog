@@ -64,6 +64,8 @@ DataLoader(dataset, batch_size=1, shuffle=False, sampler=None,
 
 其他的功能都是顺带操作。
 
+接下来主要参考知乎文章 https://zhuanlan.zhihu.com/p/340465632
+
 ![dataloader](./dataloader.png "dataloader")    
 
 ### 1. `self.batch_sampler = iter(batch_sampler)`  

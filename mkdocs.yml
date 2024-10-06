@@ -129,6 +129,7 @@ nav:
       - ring all-reduce: study/ring all-reduce.md
       - DDP: study/DDP.md
       - 语言模型: study/LM.md
+      - 论文阅读: study/论文阅读.md
   - 课程笔记:
       - course/index.md
       #- 线性代数: course/linear algebra/index.md
